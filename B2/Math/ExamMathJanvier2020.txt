@@ -1,0 +1,33 @@
+Q1)
+a) Definir expliquer et schématiser les diffrentes facons de representer un nombre complex
+b) Definir et demontrer la formule d'euler e^i.theta = cos theta + i.sin theta page 19 cours
+
+Q2) 
+Les antennes
+La premiere version du cours
+-Le prof nous donne la valeur en milliwatts a la reception et on calcule tout le reste
+
+Q3) Les primitives
+-Calculer la valeur moyenne et le valeur efficace
+-Vmax = 6v
+-0 à T/8 ca monte
+-T/8 à T/4 ca descends de Vmax à 0
+-T/4 à 3T/4 constante Vmax/3
+-3T/4 à T constante -Vmax
+
+Q4) Circuit electronique calculer z etc
+
+
+
+
+les questions de math (si vous vous souvenez d'autres détailles dites) :
+question 1 :
+a)    donner et définir les différentes formes de nombre complexe (+ graphique)
+b)    formule de euler (démonstration)
+question 2 :
+exercice avec 2 antenne (calculer gain, perte, SNR, puissance en w/dbm,…)
+question 3 :
+exemple 6 du cours page 85 MAIS avec des signaux triangulaire comme dans l’exemple 5 et 5 bis (pages 80-84) et comme page 79 
+-->   calculer Vmoy et Veff
+question 4 :
+circuit avec une bobine et/ou condensateur : calculer Ztotal, I, VC, VR, VL, XL, XC
