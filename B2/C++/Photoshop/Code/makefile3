@@ -1,0 +1,104 @@
+.SILENT:
+
+FICHIERS = Couleur.o Dimension.o Image.o ImageNG.o ImageRGB.o ImageB.o Pixel.o PixelNG.o PixelRGB.o PixelB.o BaseException.o RGBException.o XYException.o MoteurException.o ListeBase.o Liste.o ListeTriee.o Traitements.o Iterateur.o Moteur.o UI.o Utils.o $(SDL) main.o
+INCLUDE_ALL = -Wall -I./WindowSDL/ -I./JeuxDeTest/ -I. -D DEBUG -D DEBUGALL 
+JEUX_DE_TEST = ./JeuxDeTest/
+SDL_LINK = ./WindowSDL/
+SDL = $(SDL_LINK)WindowSDL.o $(SDL_LINK)WindowSDLclick.o $(SDL_LINK)WindowSDLexception.o $(SDL_LINK)WindowSDLimage.o
+
+app: $(FICHIERS)
+	echo Creation de app
+	g++ -o app $(FICHIERS) $(FOLDER) -lpthread -lSDL $(INCLUDE_ALL)
+
+Couleur.o: Couleur.cpp Couleur.h RGBException.o Utils.o
+	echo Creation de Couleur.o
+	g++ -c Couleur.cpp -o Couleur.o $(INCLUDE_ALL)
+
+Dimension.o: Dimension.cpp Dimension.h XYException.o Utils.o
+	echo Creation de Dimension.o
+	g++ -c Dimension.cpp -o Dimension.o $(INCLUDE_ALL)
+
+Image.o: Image.cpp Image.h  Utils.o
+	echo Creation de Image.o
+	g++ -c Image.cpp -o Image.o $(INCLUDE_ALL) $(SDL)
+
+ImageNG.o: ImageNG.cpp ImageNG.h Dimension.o Image.o XYException.o Utils.o $(SDL)
+	echo Creation de ImageNG.o
+	g++ -c ImageNG.cpp -o ImageNG.o $(INCLUDE_ALL) $(SDL)
+
+ImageRGB.o: ImageRGB.cpp ImageRGB.h Dimension.o Image.o XYException.o Utils.o $(SDL)
+	echo Creation de ImageRGB.o
+	g++ -c ImageRGB.cpp -o ImageRGB.o $(INCLUDE_ALL) $(SDL)
+
+ImageB.o: ImageB.cpp ImageB.h Dimension.o Image.o XYException.o Utils.o $(SDL)
+	echo Creation de ImageB.o
+	g++ -c ImageB.cpp -o ImageB.o $(INCLUDE_ALL) $(SDL)
+
+Pixel.o: Pixel.cpp Pixel.h XYException.o Utils.o
+	echo Creation de Pixel.o
+	g++ -c Pixel.cpp -o Pixel.o $(INCLUDE_ALL)
+	
+PixelNG.o: PixelNG.cpp PixelNG.h Pixel.o RGBException.o Utils.o
+	echo Creation de PixelNG.o
+	g++ -c PixelNG.cpp -o PixelNG.o $(INCLUDE_ALL)
+
+PixelRGB.o: PixelRGB.cpp PixelRGB.h Pixel.o Couleur.o RGBException.o Utils.o
+	echo Creation de PixelRGB.o
+	g++ -c PixelRGB.cpp -o PixelRGB.o $(INCLUDE_ALL)
+	
+PixelB.o: PixelB.cpp PixelB.h Pixel.o Utils.o
+	echo Creation de PixelB.o
+	g++ -c PixelB.cpp -o PixelB.o $(INCLUDE_ALL)
+
+BaseException.o: BaseException.cpp BaseException.cpp Utils.o
+	echo Creation de BaseException.o
+	g++ -c BaseException.cpp -o BaseException.o $(INCLUDE_ALL)
+	
+RGBException.o: RGBException.cpp RGBException.h BaseException.o Utils.o
+	echo Creation de RGBException.o
+	g++ -c RGBException.cpp -o RGBException.o $(INCLUDE_ALL)
+	
+XYException.o: XYException.cpp XYException.h BaseException.o Utils.o
+	echo Creation de XYException.o
+	g++ -c XYException.cpp -o XYException.o $(INCLUDE_ALL) 
+
+MoteurException.o: MoteurException.cpp MoteurException.h BaseException.o Utils.o
+	echo Creation de MoteurException.o
+	g++ -c MoteurException.cpp -o MoteurException.o $(INCLUDE_ALL)
+
+ListeBase.o: ListeBase.cpp ListeBase.h Utils.o
+	echo Creation de ListeBase.o
+	g++ -c ListeBase.cpp -o ListeBase.o $(INCLUDE_ALL)
+
+Liste.o: Liste.cpp Liste.h ListeBase.o Cellule.h Couleur.o Image.o ImageNG.o ImageRGB.o ImageB.o Utils.o
+	echo Creation de Liste.o
+	g++ -c Liste.cpp -o Liste.o $(INCLUDE_ALL)
+
+ListeTriee.o: ListeTriee.cpp ListeTriee.h ListeBase.o Cellule.h ImageNG.o Utils.o
+	echo Creation de ListeTriee.o
+	g++ -c ListeTriee.cpp -o ListeTriee.o $(INCLUDE_ALL)
+
+Iterateur.o: Iterateur.cpp Iterateur.h ListeBase.o Cellule.h Couleur.o Image.o ImageNG.o ImageRGB.o ImageB.o Utils.o
+	echo Creation de Iterateur.o
+	g++ -c Iterateur.cpp -o Iterateur.o $(INCLUDE_ALL)
+
+Traitements.o: Traitements.cpp Traitements.h Pixel.o Image.o ImageNG.o ImageRGB.o ImageB.o XYException.o Iterateur.o ListeTriee.o ListeBase.o Utils.o
+	echo Creation de Traitements.o
+	g++ -c Traitements.cpp -o Traitements.o $(INCLUDE_ALL)
+
+Moteur.o: Moteur.cpp Moteur.h Image.o ImageNG.o ImageRGB.o ImageB.o Iterateur.o MoteurException.o Traitements.o Utils.o
+	echo Creation de Moteur.o
+	g++ -c Moteur.cpp -o Moteur.o $(INCLUDE_ALL)
+
+UI.o: UI.cpp UI.h Moteur.o MoteurException.o Utils.o
+	echo Creation de UI.o
+	g++ -c UI.cpp -o UI.o $(INCLUDE_ALL)
+
+Utils.o: Utils.cpp Utils.h
+	echo Creation de Utils.o
+	g++ -c Utils.cpp -o Utils.o $(INCLUDE_ALL)
+
+clean:
+	echo Nettoyage effectué!
+	rm -rf *.o
+	make app

@@ -1,0 +1,152 @@
+#g++ -o app -Wall -lpthread -lSDL -I./WindowSDL/ -I./JeuxDeTest/ -I. Couleur.cpp Dimension.cpp Image.cpp ImageNG.cpp ImageRGB.cpp ImageB.cpp Pixel.cpp PixelNG.cpp PixelRGB.cpp PixelB.cpp BaseException.cpp RGBException.cpp XYException.cpp MoteurException.cpp ListeBase.cpp Liste.cpp ListeTriee.cpp Traitements.cpp Iterateur.cpp Moteur.cpp UI.cpp Utils.cpp ./WindowSDL/WindowSDL.o ./WindowSDL/WindowSDLclick.o ./WindowSDL/WindowSDLexception.o ./WindowSDL/WindowSDLimage.o main.cpp
+
+#.SILENT:
+	
+FICHIERS = Couleur.o Dimension.o Image.o ImageNG.o ImageRGB.o ImageB.o Pixel.o PixelNG.o PixelRGB.o PixelB.o BaseException.o RGBException.o XYException.o MoteurException.o ListeBase.o Liste.o ListeTriee.o Traitements.o Iterateur.o Moteur.o UI.o Utils.o $(DIRECTORY)WindowSDL.o $(DIRECTORY)WindowSDLclick.o $(DIRECTORY)WindowSDLexception.o $(DIRECTORY)WindowSDLimage.o main.o
+
+INCLUDE_ALL = -Wall -D DEBUG -D DEBUGALL
+JEUX_DE_TEST = ./JeuxDeTest/
+DIRECTORY = ./WindowSDL/
+FOLDER = -I./WindowSDL/ -I./JeuxDeTest/ -I.
+
+app: $(FICHIERS)
+	echo Creation de app
+	g++ -o app $(FICHIERS) $(FOLDER) -lpthread -lSDL $(INCLUDE_ALL)
+
+main.o: main.cpp Dimension.o ImageNG.o $(DIRECTORY)WindowSDL.o $(DIRECTORY)WindowSDLclick.o $(DIRECTORY)WindowSDLexception.o $(DIRECTORY)WindowSDLimage.o
+	echo Creation de main.o
+	g++ -c main.cpp -o main.o $(FOLDER) $(INCLUDE_ALL)
+
+Couleur.o: Couleur.cpp Couleur.h
+	echo Creation de Couleur.o
+	g++ -c Couleur.cpp -o Couleur.o $(FOLDER) $(INCLUDE_ALL)
+
+Dimension.o: Dimension.cpp Dimension.h
+	echo Creation de Dimension.o
+	g++ -c Dimension.cpp -o Dimension.o $(FOLDER) $(INCLUDE_ALL)
+
+Image.o: Image.cpp Image.h
+	echo Creation de Image.o
+	g++ -c Image.cpp -o Image.o $(FOLDER) $(INCLUDE_ALL)
+
+ImageNG.o: ImageNG.cpp ImageNG.h
+	echo Creation de ImageNG.o
+	g++ -c ImageNG.cpp -o ImageNG.o $(FOLDER) $(INCLUDE_ALL)
+
+ImageRGB.o: ImageRGB.cpp ImageRGB.h
+	echo Creation de ImageRGB.o
+	g++ -c ImageRGB.cpp -o ImageRGB.o $(FOLDER) $(INCLUDE_ALL)
+
+ImageB.o: ImageB.cpp ImageB.h
+	echo Creation de ImageB.o
+	g++ -c ImageB.cpp -o ImageB.o $(FOLDER) $(INCLUDE_ALL)
+
+Pixel.o: Pixel.cpp Pixel.h
+	echo Creation de Pixel.o
+	g++ -c Pixel.cpp -o Pixel.o $(FOLDER) $(INCLUDE_ALL)
+	
+PixelNG.o: PixelNG.cpp PixelNG.h
+	echo Creation de PixelNG.o
+	g++ -c PixelNG.cpp -o PixelNG.o $(FOLDER) $(INCLUDE_ALL)
+
+PixelRGB.o: PixelRGB.cpp PixelRGB.h
+	echo Creation de PixelRGB.o
+	g++ -c PixelRGB.cpp -o PixelRGB.o $(FOLDER) $(INCLUDE_ALL)
+	
+PixelB.o: PixelB.cpp PixelB.h
+	echo Creation de PixelB.o
+	g++ -c PixelB.cpp -o PixelB.o $(FOLDER) $(INCLUDE_ALL)
+	
+BaseException.o: BaseException.cpp BaseException.cpp
+	echo Creation de BaseException.o
+	g++ -c BaseException.cpp -o BaseException.o $(FOLDER) $(INCLUDE_ALL)
+	
+RGBException.o: RGBException.cpp RGBException.h
+	echo Creation de RGBException.o
+	g++ -c RGBException.cpp -o RGBException.o $(FOLDER) $(INCLUDE_ALL)
+	
+XYException.o: XYException.cpp XYException.h
+	echo Creation de XYException.o
+	g++ -c XYException.cpp -o XYException.o $(FOLDER) $(INCLUDE_ALL) 
+
+MoteurException.o: MoteurException.cpp MoteurException.h
+	echo Creation de MoteurException.o
+	g++ -c MoteurException.cpp -o MoteurException.o $(FOLDER) $(INCLUDE_ALL)
+
+ListeBase.o: ListeBase.cpp ListeBase.h
+	echo Creation de ListeBase.o
+	g++ -c ListeBase.cpp -o ListeBase.o $(FOLDER) $(INCLUDE_ALL)
+
+Liste.o: Liste.cpp Liste.h
+	echo Creation de Liste.o
+	g++ -c Liste.cpp -o Liste.o $(FOLDER) $(INCLUDE_ALL)
+
+ListeTriee.o: ListeTriee.cpp ListeTriee.h
+	echo Creation de ListeTriee.o
+	g++ -c ListeTriee.cpp -o ListeTriee.o $(FOLDER) $(INCLUDE_ALL)
+
+Iterateur.o: Iterateur.cpp Iterateur.h
+	echo Creation de Iterateur.o
+	g++ -c Iterateur.cpp -o Iterateur.o $(FOLDER) $(INCLUDE_ALL)
+
+Traitements.o: Traitements.cpp Traitements.h
+	echo Creation de Traitements.o
+	g++ -c Traitements.cpp -o Traitements.o $(FOLDER) $(INCLUDE_ALL)
+
+Moteur.o: Moteur.cpp Moteur.h
+	echo Creation de Moteur.o
+	g++ -c Moteur.cpp -o Moteur.o $(FOLDER) $(INCLUDE_ALL)
+
+UI.o: UI.cpp UI.h
+	echo Creation de UI.o
+	g++ -c UI.cpp -o UI.o $(FOLDER) $(INCLUDE_ALL)
+
+Utils.o: Utils.cpp Utils.h
+	echo Creation de Utils.o
+	g++ -c Utils.cpp -o Utils.o $(FOLDER) $(INCLUDE_ALL)
+
+Test1.o: $(JEUX_DE_TEST)Test1.cpp
+	echo Creation de Test1.o
+	g++ -c $(JEUX_DE_TEST)Test1.cpp -o Test1.o $(FOLDER) $(INCLUDE_ALL)
+
+Test2.o: $(JEUX_DE_TEST)Test2.cpp
+	echo Creation de Test2.o
+	g++ -c $(JEUX_DE_TEST)Test2.cpp -o Test2.o $(FOLDER) $(INCLUDE_ALL)
+
+Test3.o: $(JEUX_DE_TEST)Test3.cpp
+	echo Creation de Test3.o
+	g++ -c $(JEUX_DE_TEST)Test3.cpp -o Test3.o $(FOLDER) $(INCLUDE_ALL)
+	
+Test4.o: $(JEUX_DE_TEST)Test4.cpp
+	echo Creation de Test4.o
+	g++ -c $(JEUX_DE_TEST)Test4.cpp -o Test4.o $(FOLDER) $(INCLUDE_ALL)
+	
+Test5.o: $(JEUX_DE_TEST)Test5.cpp
+	echo Creation de Test5.o
+	g++ -c $(JEUX_DE_TEST)Test5.cpp -o Test5.o $(FOLDER) $(INCLUDE_ALL)
+	
+Test6.o: $(JEUX_DE_TEST)Test6.cpp
+	echo Creation de Test6.o
+	g++ -c $(JEUX_DE_TEST)Test6.cpp -o Test6.o $(FOLDER) $(INCLUDE_ALL)
+	
+Test7.o: $(JEUX_DE_TEST)Test7.cpp
+	echo Creation de Test7.o
+	g++ -c $(JEUX_DE_TEST)Test7.cpp -o Test7.o $(FOLDER) $(INCLUDE_ALL)
+	
+Test8.o: $(JEUX_DE_TEST)Test8.cpp
+	echo Creation de Test8.o
+	g++ -c $(JEUX_DE_TEST)Test8.cpp -o Test8.o $(FOLDER) $(INCLUDE_ALL)
+
+Test9.o: $(JEUX_DE_TEST)Test9.cpp
+	echo Creation de Test9.o
+	g++ -c $(JEUX_DE_TEST)Test9.cpp -o Test9.o	$(FOLDER) $(INCLUDE_ALL)
+
+Test10.o: $(JEUX_DE_TEST)Test10.cpp
+	echo Creation de Test10.o
+	g++ -c $(JEUX_DE_TEST)Test10.cpp -o Test10.o $(FOLDER) $(INCLUDE_ALL)
+	
+clean:
+	echo Nettoyage effectué!
+	rm -rf *.o
+	make app
+

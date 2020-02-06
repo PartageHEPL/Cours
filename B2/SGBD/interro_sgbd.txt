@@ -1,0 +1,18 @@
+85 points remis sur 20
+25 pratique / expliquer les requetes
+
+A)
+B)
+q1)Expliquer le code ci dessous
+Vues)
+Qu'est-ce qu'une vues?
+Quel est un role utile d'une vue? Expliquez
+Transactions)
+Quand est-ce qu'un peu dire que 2 transactions sont concurentes
+Citer les proprieter d'une transaction + en expliquer 1
+Expliquer les 2 typdes de verrous(long et court)
+Quel ont les ... de oracle
+Qu'est-ce qui demare une requete?
+Qu'est-ce qui fini une requete? Expliquer l'impacte
+Quel est le niveau superieur de oracle par rapport au truc d'isolation
+

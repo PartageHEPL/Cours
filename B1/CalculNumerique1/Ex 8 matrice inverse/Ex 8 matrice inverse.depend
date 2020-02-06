@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1543574252 source:c:\users\gilles\onedrive - enseignement de la province de liège\programme c\math\ex 8 matrice inverse\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
