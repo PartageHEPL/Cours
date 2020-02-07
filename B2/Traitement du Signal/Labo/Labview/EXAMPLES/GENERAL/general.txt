@@ -1,0 +1,14 @@
+Contain examples of basic LabVIEW concepts.
+
+Examples available describe:
+Arrays				   ->	arrays.llb
+Attribute Nodes		   ->	atribute.llb
+Basic Calculator	   ->	calcultr.llb
+Controls features	   ->	controls
+Global Variables	   ->	globals.llb
+Graphs and Charts	   ->	graphs
+Local Variables		   ->	locals.llb
+Occurrences			   ->	ocurence.llb
+Manipulating Strings   ->	strings.llb
+Structures			   ->	struct.llb
+VI Options...		   ->	viopts.llb

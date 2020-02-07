@@ -1,0 +1,5 @@
+name=mult
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

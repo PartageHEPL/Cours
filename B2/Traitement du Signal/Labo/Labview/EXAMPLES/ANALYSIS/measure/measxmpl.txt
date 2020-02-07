@@ -1,0 +1,11 @@
+Contains examples that demonstrate using measurement VIs to simulate real-world measurements.
+
+The example VIs in this VI library are:
+
+     Amp Spectrum Example
+     Dynamic Signal Analyzer (sim)
+     Simple Spectrum Analyzer (sim)
+     THD Example
+     
+
+

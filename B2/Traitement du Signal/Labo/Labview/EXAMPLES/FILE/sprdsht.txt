@@ -1,0 +1,4 @@
+Using Spreadsheet Format.vi
+
+This VI will show how to save data to a file by using the Array to Spreadsheet function.
+

@@ -1,0 +1,3 @@
+This example keeps a running average of the first parameter to CINRun, and outputs this average in the second parameter.	 The average is computed from the two global variables gTotal and gNumElements; the former sums up all floating point inputs, and the latter counts how many inputs there were so the average can be computed at any point in time.
+
+Suppose the CIN is called from more than one place, for example, from two different VIs.  The average for *both* callers is stored in only one place.  This may not be desirable if both VIs are expecting to compute a separate average, independent from the other VI's average.  If a separate average is desired for each VI, see the next example, avgv2...

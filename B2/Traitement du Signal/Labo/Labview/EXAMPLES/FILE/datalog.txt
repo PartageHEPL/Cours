@@ -1,0 +1,30 @@
+*******************	 Top Level VIs ***********************
+
+Write Datalog File Example.vi
+Creates a new datalog file and writes the specified number of records to the file, then closes it and checks for errors.  Each record is a cluster containing a string and an array of single precision numbers.
+
+Read Datalog File Example.vi
+Opens a datalog file created with Write Datalog File Example.vi, reads one record at a time from the file until all are read, then closes the file and checks for errors.  The record is a cluster containing a string and an array of single precision numbers.
+
+Simple Temp Datalog.vi
+Reads the temp/time/date cluster datalog file created by Simple Temp Datalogger.  This file format is LabVIEW specific.
+
+Simple Temp Datalogger.vi
+Saves the simulated temperature reading and the date the reading was taken in a LabVIEW datalog file.  The datalog file can be read by Simple Temp Datalog Reader.vi.
+
+*******************	 SubVIs ***********************
+
+Acquire Data (Simulated).vi
+Generates simulated waveforms given the size n points of the wave.
+
+Close Dlog File+.vi
+Closes the data log file on command or when an incoming error occurs and returns the file size at closure.	The file record is a cluster containing one string and one 1D SGL array.
+
+Open/Create/Replace Dlog File.vi
+Opens an existing datalog file, creates a new file, or replaces an existing file, programmatically or interactively using a dialog.	 Each record is a cluster containing one string and one 1D SGL array.	 You can optionally specify a dialog prompt, default file name, start path, or filter pattern, and you can specify open and deny modes when opening a file, plus group and permission when creating a new file. Use this VI with the intermediate Write File+ or Read File+ VIs.
+
+Read Dlog File +.vi
+Reads a datalog file consisting of a cluster of one string and one 1D SGL array at the specified location; the default location is at the current mark.	 The VI does incoming and internal error checking and does not read if an incoming error occurs.
+
+Write Dlog File+.vi
+Writes a datalog file consisting of one string and one 1D SGL array at the specified location; the default location is at the end of file.	 The VI does incoming and internal error checking and does not write if an incoming error occurs.

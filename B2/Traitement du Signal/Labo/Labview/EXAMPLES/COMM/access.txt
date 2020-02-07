@@ -1,0 +1,1 @@
+These examples show how to communicate with Microsoft Access using DDE.

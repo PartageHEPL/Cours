@@ -1,0 +1,1 @@
+Smplctls.llb contains a VI that is described in the first chapter of the LabVIEW Tutorial. It is for LabVIEW beginners to practice basic editing exercises on the front panel.

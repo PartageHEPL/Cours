@@ -1,0 +1,1 @@
+These examples show how to use DDE to communicate between applications with LabVIEW as either server or client.

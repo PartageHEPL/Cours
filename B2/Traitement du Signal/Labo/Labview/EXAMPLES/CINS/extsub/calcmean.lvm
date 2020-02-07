@@ -1,0 +1,16 @@
+
+
+all: calcmean.lsb sum.lsb
+
+calcmean.lsb : calcmean.c calcmean.h sum.lsb
+	@$(MAKE) /nologo /f $(CINTOOLSDIR)\ntlvsb.mak name=calcmean type=CIN subrNames=sum
+
+sum.lsb	 : sum.c
+	@$(MAKE) /nologo /f $(CINTOOLSDIR)\ntlvsb.mak name=sum  type=LVSB
+
+
+
+clean:
+	del *.lsb
+	del *.obj
+

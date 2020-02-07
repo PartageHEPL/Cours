@@ -1,0 +1,9 @@
+  This examples shows how a DLL can use LabVIEW functions.
+  The machine.vi calls a DLL that returns the machine name.
+The vi then concatenates the machine name with another string
+and displays it in a string indicator.
+  machine.c contains the c code for the DLL. It first uses a Windows
+API call to get the machine name. Then it uses LabVIEW functions to
+resize the LabVIEW handle and copy the machine name into the handle.
+  machine.mak is a "VC 2.0 for NT" makefile that builds the DLL.
+  machine.dll is the actual DLL.

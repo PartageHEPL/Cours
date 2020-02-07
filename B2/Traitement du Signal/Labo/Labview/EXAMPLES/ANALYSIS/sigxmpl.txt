@@ -1,0 +1,6 @@
+Contains examples that demonstrate some of the signal generation VIs.
+
+The example VIs in this VI library are:
+
+     Function Generator
+     Arbitrary Wave Display

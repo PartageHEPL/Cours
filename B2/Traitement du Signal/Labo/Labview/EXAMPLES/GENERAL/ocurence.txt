@@ -1,0 +1,1 @@
+Contains two simple example vis which show how the occurrence primitives in LabVIEW work.  The occurrence primitives make it possible to synchronize separate sections of diagram which are not linked by a data dependency.  They can also be used to reduce polling overhead.

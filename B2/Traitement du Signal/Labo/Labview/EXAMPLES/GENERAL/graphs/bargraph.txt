@@ -1,0 +1,2 @@
+The bargraph.llb contains a VI that demonstrates how to display an array of values in bar graph form using a subVI Array to Bar Graph.vi.  Array to Bar Graph.vi can be used to easily convert an array of data points to bar graph form.
+

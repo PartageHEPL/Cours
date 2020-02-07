@@ -1,0 +1,12 @@
+Contains examples that demonstrate IIR filtering, FIR filtering, and Median filtering.
+
+The example VIs in this VI library are:
+
+     EquiRipple Filter Design
+     Extract the Sine Wave
+     FIR Windowed Filter Design
+     IIR Filter Design
+     Median Filtering
+     Narrowband Filter Example
+     Online Filtering Example
+     Butterworth Direct Filter

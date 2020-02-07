@@ -1,0 +1,1 @@
+Contains subVIs used by the readme.vi for displaying information about VIs. Also contains the VI "Edit txt File.vi," that you can use to create and edit .txt files for your own directories or VI libraries for the readme VI to display.

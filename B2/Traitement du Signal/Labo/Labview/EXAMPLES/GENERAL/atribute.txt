@@ -1,0 +1,1 @@
+Contains VIs demonstrating how attribute nodes work. Attribute nodes can be used to change the behavior and appearance of controls and indicators while a VI is running.

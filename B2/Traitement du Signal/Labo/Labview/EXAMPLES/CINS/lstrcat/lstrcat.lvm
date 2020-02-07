@@ -1,0 +1,5 @@
+name=lstrcat
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

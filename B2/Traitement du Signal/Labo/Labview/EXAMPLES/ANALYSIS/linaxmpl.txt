@@ -1,0 +1,6 @@
+Contains examples that demonstrate the linear algebra VIs.
+
+The example VIs in this VI library are:
+
+     Linear Algebra Calculator
+     Norm of a Matrix and Fixpoint

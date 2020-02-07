@@ -1,0 +1,1 @@
+Graphctl.llb provides and example of a graph control.  The VI shows how to manipulate the cursor attribute of a waveform graph to allow a user to "draw" plots on a graph.

@@ -1,0 +1,1 @@
+This examples compares two floating point numbers.	It returns TRUE (LVTRUE is the LabVIEW data type) if the numbers are equal, and FALSE (LVFALSE) if they're not.

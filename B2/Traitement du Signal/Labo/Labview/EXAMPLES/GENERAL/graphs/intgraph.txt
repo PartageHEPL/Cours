@@ -1,0 +1,1 @@
+Intgraph.llb provides examples of how to use the intensity graph and chart.	 VIs are included that demonstrate the use of the color array and color table through attribute nodes.

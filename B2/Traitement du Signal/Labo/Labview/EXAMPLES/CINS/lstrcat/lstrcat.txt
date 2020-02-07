@@ -1,0 +1,1 @@
+This example concatenates two LabVIEW strings (appends one to the other).

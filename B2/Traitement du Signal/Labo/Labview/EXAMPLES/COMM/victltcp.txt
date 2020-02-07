@@ -1,0 +1,5 @@
+These VIs are analogous to the VI Control VIs found in the Utility
+palette except they allow VIs to be controlled over TCP/IP.	 A remote
+LabVIEW must run the Remote VI Server.vi and listen on a
+pre-determined port.  Other LabVIEWs may then contact the Remote VI
+Server and have it run VIs.

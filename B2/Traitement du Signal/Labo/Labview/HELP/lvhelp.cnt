@@ -1,0 +1,79 @@
+:Base lvhelp.hlp
+:Title LabVIEW Help
+:Index Analysis =lvanls.hlp
+:Index Communications =lvcomm.hlp
+:Index Instrument I/O =lvinstio.hlp
+:Index Code Interface Functions =lvcirm.hlp
+:Index Data Acquisition =lvdaq.hlp
+1 If you are upgrading to 4.0=If_you_are_upgrading_to_40
+1 Related Products=Related_Products
+1 Support and Training=Support_and_Training
+1 LabVIEW Overview
+2 Examples=Examples
+2 Getting Started with LabVIEW
+3 Introduction to LabVIEW=Introduction_to_LabVIEW
+3 Creating VIs=Creating_VIs
+3 Editing VIs=Editing_VIs
+3 Creating SubVIs=Creating_SubVIs
+3 Operating VIs=Operating_VIs
+3 Debugging VIs=Debugging_VIs
+3 Creating Pop-Up Panels and Setting Window Features=Creating_Pop_Up_Panels_and_Setting_Window_Features
+3 Documenting VIs with the Get Info... Option=Documenting_VIs_with_the_Get_Info_Option
+3 Printing
+4 Printing in LabVIEW=Printing_in_LabVIEW
+4 programmatic printing=programmatic_printing
+4 Using the Print Documentation Menu Option=Using_the_Print_Documentation_Menu_Option
+4 Other Methods for Printing=Other_Methods_for_Printing
+3 Customing Your LabVIEW Environment
+4 Setting LabVIEW Preferences=Setting_LabVIEW_Preferences
+4 Customizing the Controls and Functions Palettes=Customizing_the_Controls_and_Functions_Palettes
+3 Finding VIs, Objects, and Text
+4 Using the Find Dialog Box=Using_the_Find_Dialog_Box
+4 Using Find Options from a Pop-Up Menu=Using_Find_Options_from_a_Pop_Up_Menu
+1 LabVIEW Reference
+2 Error Codes=Error_Codes_Master
+2 Function and VI Reference=Function_and_VI_Reference
+2 Front Panel Reference
+3 Front Panel Object Introduction=Front_Panel_Object_Introduction
+3 Importing Graphics from Other Programs=Importing_Graphics_from_Other_Programs
+3 Numeric Controls and Indicators=Numeric_Controls_and_Indicators_topic
+3 Boolean Controls and Indicators=Boolean_Controls_and_Indicators
+3 String Controls and Indicators=String_Controls_and_Indicators
+3 Path Controls and Refnums=Path_Controls_and_Refnums
+3 List and Ring Controls and Indicators=List_and_Ring_Controls_and_Indicators
+3 Array Controls and Indicators=Arrays
+3 Cluster Controls and Indicators=Clusters
+3 Graph and Chart Controls and Indicators=Graph_and_Chart_Controls_and_Indicators
+2 Block Diagram Reference
+3 Block Diagram Introduction=Block_Diagram_Introduction
+3 Wiring the Block Diagram=Wiring_the_Block_Diagram
+3 Structures=Structures_Topic
+3 Formula Node=Formula_Node2
+3 Attribute Nodes=Attribute_Nodes
+3 Global and Local Variables=Global_and_Local_Variables
+2 Advanced Topics
+3 Custom Controls and Type Definitions=Custom_Controls_and_Type_Definitions
+3 Calling Code from Other Languages=Calling_Code_from_Other_Languages
+3 Application Management=Application_Management
+3 Understanding How LabVIEW Executes VIs=Understanding_How_LabVIEW_Executes_VIs
+3 Portability Issues=Portability_Issues
+3 Data Storage Formats=Data_Storage_Formats
+3 Performance Issues
+4 Performance Profiling=Performance_Profiling
+4 Speeding Up Your VIs=Speeding_Up_Your_VIs
+4 Memory Usage=Memory_Usage
+1 Common Questions
+2 Error Messages and Crashes=Error_Messages_and_Crashes_Questions
+2 Miscellaneous=Miscellaneous_Questions
+2 Platform Issues and Compatibilities=Platform_Issues_and_Compatibilities_Questions
+2 Charts and Graphs=Charts_and_Graphs_Questions
+2 Printing=Printing_Questions
+2 Communications=Communications_Common_Questions
+2 Data Acquisition=Data_Acquisition_Common_Questions
+2 GPIB=GPIB_Questions
+2 Serial I/O=Serial_I_O_Questions
+1 VI Libraries
+2 Analysis VIs=!JumpID("lvanls.hlp", "Analysis_VIs")
+2 Communication VIs=!JumpID("lvcomm.hlp","IDH_CONTENTS")
+2 Data Acquisition VIs=!JumpID("lvdaq.hlp","Data_Acquisition_VIs")
+2 Instrument I/O VIs=!JumpID("lvinstio.hlp", "IDH_CONTENTS")

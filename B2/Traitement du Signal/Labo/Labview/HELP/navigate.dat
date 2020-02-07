@@ -1,0 +1,256 @@
+=This file contains the text information for the DAQ Navigator. Each entry
+in the file should have the following format:
+
+#name:::
+[Text]
+:::
+
+where,
+#         - the index of topic name, found as a look-up table in "Read Text
+Info (one file).vi
+name   - the topic name
+:::        - three colons to denote beginning of text information
+[Text]   - The text associated with the topic (brackets [ ] are not
+necessary; there MUST be a
+              carriage return or line feed before and after the text.
+Multiple CR or LF are ignored.
+:::        - three colons to denote end of text information
+
+Multi-string entries should look like the following:
+
+#name:::
+string1
+@@
+string2
+@@
+stringN
+:::
+Note that @@ symbols should be on their own lines an serve to separate the
+strings.
+  @@ should not be used before the first string nor after the last string.
+
+Index:
+
+0 - board - Determine the type of hardware
+1 - signal - Determine if analog or digital signals are to be used
+2 - digital - Determine if digital i/o lines or counters are to be used
+3 - digio - Determine if latched or non latched i/o is wanted
+4 - analog - Determine if analog input or output is wanted
+5 - analogout - Determine if single or multiple point output is wanted
+6 - analogin - Determine if single or multiple point input is wanted
+7 - trigger - Determine if triggering is to be used
+8 - clock - Determine if internal or external timing is to be used
+9 - scxi - Determine if analog or digital signals are to be used with SCXI
+10 - trigtime - Determine the timing to be used for the triggered daq
+11 - singletime - Determine if timed or untimed single point AI is wanted
+12 - descscxi - Additional info on SCXI
+13 - desccounter - Additional info on counters
+14 - desclatchdig - Additional info on latched digital I/O
+15 - descdig - Additional info on non-latched digital I/O
+16 - desc1gen - Additional info on single-point generation
+17 - descbufgen - Additional info on buffered generation
+18 - desc1acq - Additional info on single-point acquisition
+19 - desctrig - Additional info on triggered DAQ
+20 - descbufacq - Additional info on buffered acquisition
+21 - desctime - Additional info on external timing
+22 - descscxi2 - Additional info on SCXI...again!
+23 - desc1acq2 - Additional info on single-point acquisition...again!
+24 - desctrigtime - Additional info on triggered and ext. timed DAQ
+
+Here goes:
+
+board - Determine the type of hardware
+0board:::
+What kind of measurement hardware do you have?
+@@
+Plug-in DAQ Device
+@@
+SCXI
+:::
+
+signal - Determine if analog or digital signals are to be used
+1signal:::
+Are you working with analog or digital signals?
+@@
+Analog Signals
+@@
+Digital Signals
+:::
+
+digital - Determine if digital i/o lines or counters are to be used
+2digital:::
+Do you want to use the digital I/O lines or the counter/timers?
+@@
+Digital I/O
+@@
+Counter/Timer
+:::
+
+digio - Determine if latched or non latched i/o is wanted
+3digio:::
+Do you want to perform latched or non-latched digital I/O?
+@@
+Latched Digital I/O
+@@
+Non-Latched Digital I/O
+:::
+
+analog - Determine if analog input or output is wanted
+4analog:::
+Do you want to acquire or generate analog input signals?
+@@
+Acquire Analog Signals
+@@
+Generate Analog Signals
+:::
+
+analogout - Determine if single or multiple point output is wanted
+5analogout:::
+Do you want single-point or multiple-point (waveform) generation?
+@@
+Single-Point Generation
+@@
+Multiple-Point Generation
+:::
+
+analogin - Determine if single or multiple point input is wanted
+6analogin:::
+Do you want single-point or multiple-point (waveform) acquisition?
+@@
+Single-Point Acquisition
+@@
+Multiple-Point acquisition
+:::
+
+trigger - Determine if triggering is to be used
+7trigger:::
+Do you want to trigger your signal?
+@@
+Yes, I do want triggering
+@@
+No triggering
+:::
+
+clock - Determine if internal or external timing is to be used
+8clock:::
+Do you want to use an internal or external clock source to time your DAQ?
+@@
+Use the internal clock
+@@
+Use an externally supplied clock
+:::
+
+scxi - Determine if analog or digital signals are to be used with SCXI
+9scxi:::
+Do you want to use a analog or digital SCXI module?
+@@
+Analog SCXI Module
+@@
+Digital SCXI Module
+:::
+
+trigtime - Determine the timing to be used for the triggered daq
+10trigtime:::
+Do you want to use an internal or external clock source to time your
+triggered DAQ?
+@@
+Use the internal clock
+@@
+Use an externally supplied clock
+:::
+
+singletime - Determine if timed or untimed single point AI is wanted
+11singletime:::
+What type of single-point acquisition is to be performed?
+@@
+Simple Single-Point Analog Input
+@@
+Analog Input/Output Control Loop
+:::
+
+descscxi - Additional info on SCXI
+12descscxi:::
+Read Part 5, "SCXI-Getting Your Signals In Great Condition" in the LabVIEW Data Acquisition Basics Manual for more information on using SCXI.
+:::
+
+desccounter - Additional info on counters
+13desccounter:::
+Read Chapter 21, "Things You Should Know About Counters" in the LabVIEW Data Acquisition Basics Manual for general information on using counters.
+
+Read Chapter 22, "Generating a Square Pulse or Pulse Train" in the LabVIEW Data Acquisition Basics Manual for more information on generating digital pulse outputs.
+
+Read Chapter 23, "Measuring Pulse Width" in the LabVIEW Data Acquisition Basics Manual for more information on using counters to measure width of digital pulses.
+
+Read Chapter 24, "Measuring Pulse Frequency and Period" in the LabVIEW Data Acquisition Basics Manual for more information on using counters to measure the frequency and period of a digital pulse train.
+
+Read Chapter 25, "Counting Signal Highs and Lows" in the LabVIEW Data Acquisition Basics Manual for more information on using counters for event counting.
+
+Read Chapter 26, "Dividing Frequencies" in the LabVIEW Data Acquisition Basics Manual for more information on using counters to divide down frequencies to different values.
+:::
+
+desclatchdig - Additional info on latched digital I/O
+14desclatchdig:::
+Read Chapter 15, "Shaking Hands with a Digital Partner" in the LabVIEW Data Acquisition Basics Manual for more information on performing digital I/O with handshaking.
+:::
+
+descdig - Additional info on non-latched digital I/O
+15descdig:::
+Read Chapter 14, "When You Need It Now-Immediate Digital I/O" in the LabVIEW Data Acquisition Basics Manual for more information on non-latched digital I/O.
+:::
+
+desc1gen - Additional info on single-point generation
+16desc1gen:::
+Read Chapter 11, "One-Stop Single-Point Generation" in the LabVIEW Data Acquisition Basics Manual for more information on performing single-point analog output.
+:::
+
+descbufgen - Additional info on buffered generation
+17descbufgen:::
+Read Chapter 12, "Buffering Your Way though Waveform Generation" in the LabVIEW Data Acquisition Basics Manual for more information on performing buffered multi-point analog output.
+:::
+
+desc1acq - Additional info on single-point acquisition
+18desc1acq:::
+Read Chapter 6, "One-Stop Single-Point Acquisition" in the LabVIEW Data Acquisition Basics Manual for more information on performing single-point analog input.
+:::
+
+desctrig - Additional info on triggered DAQ
+19desctrig:::
+Read Chapter 7, "Buffering Your Way though Waveform Acquisition" in the LabVIEW Data Acquisition Basics Manual for more information on performing buffered multi-point analog input.
+
+Read Chapter 8, "Taking Control of Your Acquisition with Triggers" in the LabVIEW Data Acquisition Basics Manual for more information on acquiring data with the use of triggers.
+:::
+
+descbufacq - Additional info on buffered acquisition
+20descbufacq:::
+Read Chapter 7, "Buffering Your Way though Waveform Acquisition" in the LabVIEW Data Acquisition Basics Manual for more information on performing buffered multi-point analog input.
+:::
+
+desctime - Additional info on external timing
+21desctime:::
+Read Chapter 7, "Buffering Your Way though Waveform Acquisition" in the LabVIEW Data Acquisition Basics Manual for more information on performing buffered multi-point analog input.
+
+Read Chapter 9, "Letting an Outside Source Control Your Acquisition Rate" in the LabVIEW Data Acquisition Basics Manual for more information on externally timing a data acquisition.
+:::
+
+descscxi2 - Additional info on SCXI...again!
+22descscxi2:::
+Read Part 5, "SCXI-Getting Your Signals In Great Condition" in the LabVIEW Data Acquisition Basics Manual for more information on using SCXI.
+:::
+
+desc1acq2 - Additional info on single-point acquisition...again!
+23desc1acq2:::
+Read Chapter 6, "One-Stop Single-Point Acquistion" in the LabVIEW Data Acquisition Basics Manual for more information on performing single-point analog input.
+:::
+
+desctrigtime - Additional info on triggered and ext. timed DAQ
+24desctrigtime:::
+For example VIs,  look to the sections of the DAQ Navigator on triggered signals with no external timing and external timing with no triggering.  The concepts in these two sections can be combined to achieve a VI that uses triggering and is externally timed.
+
+Read Chapter 7, "Buffering Your Way though Waveform Acquisition" in the LabVIEW Data Acquisition Basics Manual for more information on performing buffered multi-point analog input.
+
+Read Chapter 8, "Taking Control of Your Acquisition with Triggers" in the LabVIEW Data Acquisition Basics Manual for more information on acquiring data with the use of triggers.
+
+Read Chapter 9, "Letting an Outside Source Control Your Acquisition Rate" in the LabVIEW Data Acquisition Basics Manual for more information on externally timing a data acquisition.
+:::
+
+

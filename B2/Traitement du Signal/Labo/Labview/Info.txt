@@ -1,0 +1,26 @@
+Le bundel temporel
+1)l'origine de l'axe (le truc bleu dans labo_sinus1) 0 dans un bundel de temps
+2)Le pas de progression 1/sample
+3)Le signal
+
+Pour le bundel frequenciel
+1)Origine de l'axe mais il ne vaut plus 0 mais il vaut -sample/2
+2)Le pas de progression vaut 1 pour le bundel frequenciel
+3)Le signal(Le tableau contenant les valeur a chaque frequence)
+
+Quand on sort le sinus on le branche sur le fourier
+
+Comment on sais si on est en bundel de temps ou frequence?
+-Bundel de temps avant Fourier et apres F-1
+-Bundel de frequence apres fourier et avant F-1
+
+Faire des screenshots pour voir les resultats dans un tableau a deux colones
+-temorel et frequentiel
+
+Pour l'exam preparer une demo et faire 5 ou 10 pcq c'est plus simple
+
+Faire un rect de frequance 10 hz et faire la fondamental et 2 harmonique 
+
+
+
+

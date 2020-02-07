@@ -1,0 +1,4 @@
+Displays memory usage statistics for all currently open VIs.
+
+Memory Monitor.vi allows you to select from a list of all currently open VIs.  It then displays memory usage statistics for the selected VI and it's hierarchy.
+

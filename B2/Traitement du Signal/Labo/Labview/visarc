@@ -1,0 +1,837 @@
+// VISA Class definitions
+class: "Instr"
+    attribute: "Intf Parent Num"
+	       "Interface Number of Parent"
+	       uW readonly global 3FFF0101
+	       "This attribute value specifies the board number of the parent device."
+    attribute: "Intf Num"
+	       "Interface Number"
+	       uW readonly global 3FFF0176
+               "This attribute value specifies the board number for the given interface."
+    attribute: "Intf Type"
+	       "Interface Type"
+	       uW readonly global 3FFF0171
+               "This attribute value specifies the interface type of the given session."
+    attribute: "IO Prot"
+	       "IO Protocol"
+               uW readwrite local 3FFF001C
+               "This attribute specifies which protocol to use.  In VXI systems, for example, you can choose between normal word serial or fast data channel.  In GPIB you can choose between normal and high-speed data transfers."
+    attribute: "Max Queue Len"
+               "Maximum Queue Length"
+               uL readwrite local 3FFF0005
+               "This attribute specifies the maximum number of events that can be queued at any time on the given session."
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Rsrc Name"
+               "Resource Name"
+               string readonly global BFFF0002
+               "This attribute is the unique identifier for a resource."
+    attribute: "Rsrc Lock State"
+               "Resource Lock State"
+               uL readonly global 3FFF0004
+               "This attribute reflects the current locking state of the resource that is associated with the given session."
+    attribute: "Send End En"
+               "Send End Enable"
+               bool readwrite local 3FFF0016
+               "This attribute specifies whether to send an END indicator on the last byte of each write operation."
+    attribute: "Suppress End En"
+               "Suppress End Enable"
+               bool readwrite local 3FFF0036
+               "This attribute specifies whether to ignore any END indicator on read operations."
+    attribute: "TermChar"
+               "Termination Character"
+               uB readwrite local 3FFF0018
+               "This attribute specifies a character that, when read, causes a read operation to terminate.  The termination character must also be enabled."
+    attribute: "TermChar En"
+               "Termination Character Enable"
+               bool readwrite local 3FFF0038
+               "This attribute specifies whether a read operation should terminate when the termination character is received."
+    attribute: "Tmo Value"
+               "Timeout Value"
+               uL readwrite local 3FFF001A
+               "This attribute specifies the timeout value, in milliseconds, to use when accessing the device."
+    attribute: "Trigger Id"
+               "Trigger Identifier"
+               iW readwrite local 3FFF0177
+               "This attribute specifies which trigger mechanism to use.  In VXI systems, for example, you can choose between software triggers and hardware triggers on a specific trigger line."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+    attribute: "FDC Chnl"
+               "Fast Data Channel Number"
+               uW readwrite local 3FFF000D
+               "This attribute specifies which FDC channel will be used to transfer data buffers."
+    attribute: "FDC Gen Signal En"
+               "Fast Data Channel Signal Enable"
+               bool readwrite local 3FFF0011
+               "This attribute specifies whether the FDC servant will send a signal when it passes control of the FDC channel back to its commander."
+    attribute: "FDC Mode"
+               "Fast Data Channel Mode"
+               uW readwrite local 3FFF000F
+               "This attribute specifies whether FDC transfers will use normal or streaming mode."
+    attribute: "FDC Use Pair"
+               "Fast Data Channel Pairs"
+               bool readwrite local 3FFF0013
+               "This attribute specifies whether transfers will use a pair of FDC channels.  If not set, only one FDC channel will be used."
+    attribute: "GPIB Primary Addr"
+               "GPIB Primary Address"
+               uW readonly global 3FFF0172
+               "This attribute value is the primary address of the GPIB device used by the given session."
+    attribute: "GPIB Secondary Addr"
+               "GPIB Secondary Address"
+               uW readonly global 3FFF0173
+               "This attribute value is the secondary address of the GPIB device used by the given session.  If the device does not have a secondary address, then the value of this attribute is 0xFFFF."
+    attribute: "Mainframe LA"
+               "Mainframe Logical Address"
+               iW readonly global 3FFF0070
+               "This attribute value is the lowest logical address in the mainframe in which the device resides."
+    attribute: "Manf Id"
+               "Manufacturer Identification"
+               uW readonly global 3FFF00D9
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the device."
+    attribute: "Mem Base"
+               "VXI Memory Base Address"
+               uL readonly global 3FFF00AD
+               "This attribute value is the base address of the device in VXI memory space."
+    attribute: "Mem Size"
+               "VXI Memory Size"
+               uL readonly global 3FFF00DD
+               "This attribute value is the size of memory requested by the device in VXI memory space."
+    attribute: "Mem Space"
+               "VXI Memory Address Space"
+               uW readonly global 3FFF00DE
+               "This attribute value is the VXI address space used by the device."
+    attribute: "Model Code"
+               "Model Code"
+               uW readonly global 3FFF00DF
+               "This attribute value is the device model code assigned by the manufacturer."
+    attribute: "Slot"
+               "Slot"
+               iW readonly global 3FFF00E8
+               "This attribute value is the physical slot location of the VXI device."
+    attribute: "VXI LA"
+               "VXI Logical Address"
+               iW readonly global 3FFF00D5
+               "This attribute value is the logical address of the VXI device."
+    attribute: "Immediate Serv"
+               "Immediate Servant"
+               bool readonly global 3FFF0100
+               "This attribute value reflects whether the VXI device is an immediate servant of the local controller."
+    attribute: "Win Base Addr"
+               "Window Base Address"
+               uL readonly local 3FFF0098
+               "This attribute value is the base interface address to which this window is mapped."
+    attribute: "Win Size"
+               "Window Size"
+               uL readonly local 3FFF009A
+               "This attribute value is the size of the region mapped to this window."
+    attribute: "Win Access"
+               "Window Access"
+               uW readonly local 3FFF00C3
+               "This attribute value reflects whether the current session has a mapped window, and if so, whether accesses through this window can be achieved through direct pointer dereferences."
+    attribute: "Cmdr LA"
+               "VXI Commander Logical Address"
+               iW readonly global 3FFF006B
+               "This attribute value is the logical address of the commander of the VXI device."
+    attribute: "Src Increment"
+               "Increment Source Count"
+               iL readwrite local 3FFF0040
+               "This attribute specifies the number of elements by which to increment the source address on block move operations."
+    attribute: "Dest Increment"
+               "Increment Destination Count"
+               iL readwrite local 3FFF0041
+               "This attribute specifies the number of elements by which to increment the destination address on block move operations."
+    attribute: "ASRL Avail Num"
+               "Number of Bytes at Serial Port"
+               uL readonly global 3FFF00AC
+               "This attribute specifies the number of bytes currently available at the serial port used by this session."
+    attribute: "ASRL Baud"
+               "Serial Baud Rate"
+               uL readwrite global 3FFF0021
+               "This attribute specifies the baud rate of the given communications port."
+    attribute: "ASRL Data Bits"
+               "Serial Data Bits"
+               uW readwrite global 3FFF0022
+               "This attribute specifies the number of data bits contained in each frame."
+    attribute: "ASRL Parity"
+               "Serial Parity"
+               uW readwrite global 3FFF0023
+               "This attribute specifies the parity used with every frame that is transmitted or received."
+    attribute: "ASRL Stop Bits"
+               "Serial Stop Bits"
+               uW readwrite global 3FFF0024
+               "This attribute specifies the number of stop bits used to indicate the end of a frame."
+    attribute: "ASRL Flow Cntrl"
+               "Serial Flow Control"
+               uW readwrite global 3FFF0025
+               "This attribute specifies the flow control method used for both transmitting and receiving data."
+    attribute: "ASRL End In"
+               "Serial End Mode for Reads"
+               uW readwrite local 3FFF00B3
+               "This attribute specifies the method used to terminate read operations."
+    attribute: "ASRL End Out"
+               "Serial End Mode for Writes"
+               uW readwrite local 3FFF00B4
+               "This attribute specifies the method used to terminate write operations."
+
+    method: "VISA Status Description"
+    method: "VISA Open"
+    method: "VISA Close"
+    method: "VISA Lock"
+    method: "VISA Unlock"
+    method: "VISA Enable Event"
+    method: "VISA Disable Event"
+    method: "VISA Wait on Event"
+    method: "VISA Discard Events"
+    method: "VISA Read"
+    method: "VISA Write"
+    method: "VISA Clear"
+    method: "VISA Read STB"
+    method: "VISA Assert Trigger"
+    method: "VISA In 32"
+    method: "VISA In 16"
+    method: "VISA In 8"
+    method: "VISA Out 32"
+    method: "VISA Out 16"
+    method: "VISA Out 8"
+    method: "VISA Map Address"
+    method: "VISA Unmap Address"
+    method: "VISA Peek 32"
+    method: "VISA Peek 16"
+    method: "VISA Peek 8"
+    method: "VISA Poke 32"
+    method: "VISA Poke 16"
+    method: "VISA Poke 8"
+    method: "VISA Move In 8"
+    method: "VISA Move In 16"
+    method: "VISA Move In 32"
+    method: "VISA Move Out 8"
+    method: "VISA Move Out 16"
+    method: "VISA Move Out 32"
+    method: "VISA Mem Alloc"
+    method: "VISA Mem Free"
+
+class: "GPIB Instr"
+    attribute: "Intf Num"
+	       "Interface Number"
+	       uW readonly global 3FFF0176
+               "This attribute value specifies the board number for the given interface."
+    attribute: "Intf Type"
+	       "Interface Type"
+	       uW readonly global 3FFF0171
+               "This attribute value specifies the interface type of the given session."
+    attribute: "IO Prot"
+	       "IO Protocol"
+               uW readwrite local 3FFF001C
+               "This attribute specifies which protocol to use.  In VXI systems, for example, you can choose between normal word serial or fast data channel.  In GPIB you can choose between normal and high-speed data transfers."
+    attribute: "Max Queue Len"
+               "Maximum Queue Length"
+               uL readwrite local 3FFF0005
+               "This attribute specifies the maximum number of events that can be queued at any time on the given session."
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Rsrc Name"
+               "Resource Name"
+               string readonly global BFFF0002
+               "This attribute is the unique identifier for a resource."
+    attribute: "Rsrc Lock State"
+               "Resource Lock State"
+               uL readonly global 3FFF0004
+               "This attribute reflects the current locking state of the resource that is associated with the given session."
+    attribute: "Send End En"
+               "Send End Enable"
+               bool readwrite local 3FFF0016
+               "This attribute specifies whether to send an END indicator on the last byte of each write operation."
+    attribute: "TermChar"
+               "Termination Character"
+               uB readwrite local 3FFF0018
+               "This attribute specifies a character that, when read, causes a read operation to terminate.  The termination character must also be enabled."
+    attribute: "TermChar En"
+               "Termination Character Enable"
+               bool readwrite local 3FFF0038
+               "This attribute specifies whether a read operation should terminate when the termination character is received."
+    attribute: "Tmo Value"
+               "Timeout Value"
+               uL readwrite local 3FFF001A
+               "This attribute specifies the timeout value, in milliseconds, to use when accessing the device."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+    attribute: "GPIB Primary Addr"
+               "GPIB Primary Address"
+               uW readonly global 3FFF0172
+               "This attribute value is the primary address of the GPIB device used by the given session."
+    attribute: "GPIB Secondary Addr"
+               "GPIB Secondary Address"
+               uW readonly global 3FFF0173
+               "This attribute value is the secondary address of the GPIB device used by the given session.  If the device does not have a secondary address, then the value of this attribute is 0xFFFF."
+
+    method: "VISA Status Description"
+    method: "VISA Open"
+    method: "VISA Close"
+    method: "VISA Lock"
+    method: "VISA Unlock"
+    method: "VISA Enable Event"
+    method: "VISA Disable Event"
+    method: "VISA Wait on Event"
+    method: "VISA Discard Events"
+    method: "VISA Read"
+    method: "VISA Write"
+    method: "VISA Clear"
+    method: "VISA Read STB"
+    method: "VISA Assert Trigger"
+
+class: "VXI/GPIB-VXI MBD Instr"
+    attribute: "Intf Parent Num"
+	       "Interface Number of Parent"
+	       uW readonly global 3FFF0101
+	       "This attribute value specifies the board number of the parent device."
+    attribute: "Intf Num"
+	       "Interface Number"
+	       uW readonly global 3FFF0176
+               "This attribute value specifies the board number for the given interface."
+    attribute: "Intf Type"
+	       "Interface Type"
+	       uW readonly global 3FFF0171
+               "This attribute value specifies the interface type of the given session."
+    attribute: "IO Prot"
+	       "IO Protocol"
+               uW readwrite local 3FFF001C
+               "This attribute specifies which protocol to use.  In VXI systems, for example, you can choose between normal word serial or fast data channel.  In GPIB you can choose between normal and high-speed data transfers."
+    attribute: "Max Queue Len"
+               "Maximum Queue Length"
+               uL readwrite local 3FFF0005
+               "This attribute specifies the maximum number of events that can be queued at any time on the given session."
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Rsrc Name"
+               "Resource Name"
+               string readonly global BFFF0002
+               "This attribute is the unique identifier for a resource."
+    attribute: "Rsrc Lock State"
+               "Resource Lock State"
+               uL readonly global 3FFF0004
+               "This attribute reflects the current locking state of the resource that is associated with the given session."
+    attribute: "Send End En"
+               "Send End Enable"
+               bool readwrite local 3FFF0016
+               "This attribute specifies whether to send an END indicator on the last byte of each write operation."
+    attribute: "Suppress End En"
+               "Suppress End Enable"
+               bool readwrite local 3FFF0036
+               "This attribute specifies whether to ignore any END indicator on read operations."
+    attribute: "TermChar"
+               "Termination Character"
+               uB readwrite local 3FFF0018
+               "This attribute specifies a character that, when read, causes a read operation to terminate.  The termination character must also be enabled."
+    attribute: "TermChar En"
+               "Termination Character Enable"
+               bool readwrite local 3FFF0038
+               "This attribute specifies whether a read operation should terminate when the termination character is received."
+    attribute: "Tmo Value"
+               "Timeout Value"
+               uL readwrite local 3FFF001A
+               "This attribute specifies the timeout value, in milliseconds, to use when accessing the device."
+    attribute: "Trigger Id"
+               "Trigger Identifier"
+               iW readwrite local 3FFF0177
+               "This attribute specifies which trigger mechanism to use.  In VXI systems, for example, you can choose between software triggers and hardware triggers on a specific trigger line."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+    attribute: "FDC Chnl"
+               "Fast Data Channel Number"
+               uW readwrite local 3FFF000D
+               "This attribute specifies which FDC channel will be used to transfer data buffers."
+    attribute: "FDC Gen Signal En"
+               "Fast Data Channel Signal Enable"
+               bool readwrite local 3FFF0011
+               "This attribute specifies whether the FDC servant will send a signal when it passes control of the FDC channel back to its commander."
+    attribute: "FDC Mode"
+               "Fast Data Channel Mode"
+               uW readwrite local 3FFF000F
+               "This attribute specifies whether FDC transfers will use normal or streaming mode."
+    attribute: "FDC Use Pair"
+               "Fast Data Channel Pairs"
+               bool readwrite local 3FFF0013
+               "This attribute specifies whether transfers will use a pair of FDC channels.  If not set, only one FDC channel will be used."
+    attribute: "GPIB Primary Addr"
+               "GPIB Primary Address"
+               uW readonly global 3FFF0172
+               "This attribute value is the primary address of the GPIB device used by the given session."
+    attribute: "GPIB Secondary Addr"
+               "GPIB Secondary Address"
+               uW readonly global 3FFF0173
+               "This attribute value is the secondary address of the GPIB device used by the given session.  If the device does not have a secondary address, then the value of this attribute is 0xFFFF."
+    attribute: "Mainframe LA"
+               "Mainframe Logical Address"
+               iW readonly global 3FFF0070
+               "This attribute value is the lowest logical address in the mainframe in which the device resides."
+    attribute: "Manf Id"
+               "Manufacturer Identification"
+               uW readonly global 3FFF00D9
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the device."
+    attribute: "Mem Base"
+               "VXI Memory Base Address"
+               uL readonly global 3FFF00AD
+               "This attribute value is the base address of the device in VXI memory space."
+    attribute: "Mem Size"
+               "VXI Memory Size"
+               uL readonly global 3FFF00DD
+               "This attribute value is the size of memory requested by the device in VXI memory space."
+    attribute: "Mem Space"
+               "VXI Memory Address Space"
+               uW readonly global 3FFF00DE
+               "This attribute value is the VXI address space used by the device."
+    attribute: "Model Code"
+               "Model Code"
+               uW readonly global 3FFF00DF
+               "This attribute value is the device model code assigned by the manufacturer."
+    attribute: "Slot"
+               "Slot"
+               iW readonly global 3FFF00E8
+               "This attribute value is the physical slot location of the VXI device."
+    attribute: "VXI LA"
+               "VXI Logical Address"
+               iW readonly global 3FFF00D5
+               "This attribute value is the logical address of the VXI device."
+    attribute: "Immediate Serv"
+               "Immediate Servant"
+               bool readonly global 3FFF0100
+               "This attribute value reflects whether the VXI device is an immediate servant of the local controller."
+    attribute: "Win Base Addr"
+               "Window Base Address"
+               uL readonly local 3FFF0098
+               "This attribute value is the base interface address to which this window is mapped."
+    attribute: "Win Size"
+               "Window Size"
+               uL readonly local 3FFF009A
+               "This attribute value is the size of the region mapped to this window."
+    attribute: "Win Access"
+               "Window Access"
+               uW readonly local 3FFF00C3
+               "This attribute value reflects whether the current session has a mapped window, and if so, whether accesses through this window can be achieved through direct pointer dereferences."
+    attribute: "Cmdr LA"
+               "VXI Commander Logical Address"
+               iW readonly global 3FFF006B
+               "This attribute value is the logical address of the commander of the VXI device."
+    attribute: "Src Increment"
+               "Increment Source Count"
+               iL readwrite local 3FFF0040
+               "This attribute specifies the number of elements by which to increment the source address on block move operations."
+    attribute: "Dest Increment"
+               "Increment Destination Count"
+               iL readwrite local 3FFF0041
+               "This attribute specifies the number of elements by which to increment the destination address on block move operations."
+
+    method: "VISA Status Description"
+    method: "VISA Open"
+    method: "VISA Close"
+    method: "VISA Lock"
+    method: "VISA Unlock"
+    method: "VISA Enable Event"
+    method: "VISA Disable Event"
+    method: "VISA Wait on Event"
+    method: "VISA Discard Events"
+    method: "VISA Read"
+    method: "VISA Write"
+    method: "VISA Clear"
+    method: "VISA Read STB"
+    method: "VISA Assert Trigger"
+    method: "VISA In 32"
+    method: "VISA In 16"
+    method: "VISA In 8"
+    method: "VISA Out 32"
+    method: "VISA Out 16"
+    method: "VISA Out 8"
+    method: "VISA Map Address"
+    method: "VISA Unmap Address"
+    method: "VISA Peek 32"
+    method: "VISA Peek 16"
+    method: "VISA Peek 8"
+    method: "VISA Poke 32"
+    method: "VISA Poke 16"
+    method: "VISA Poke 8"
+    method: "VISA Move In 8"
+    method: "VISA Move In 16"
+    method: "VISA Move In 32"
+    method: "VISA Move Out 8"
+    method: "VISA Move Out 16"
+    method: "VISA Move Out 32"
+    method: "VISA Mem Alloc"
+    method: "VISA Mem Free"
+
+class: "VXI/GPIB-VXI RBD Instr"
+    attribute: "Intf Parent Num"
+	       "Interface Number of Parent"
+	       uW readonly global 3FFF0101
+	       "This attribute value specifies the board number of the parent device."
+    attribute: "Intf Num"
+	       "Interface Number"
+	       uW readonly global 3FFF0176
+               "This attribute value specifies the board number for the given interface."
+    attribute: "Intf Type"
+	       "Interface Type"
+	       uW readonly global 3FFF0171
+               "This attribute value specifies the interface type of the given session."
+    attribute: "Max Queue Len"
+               "Maximum Queue Length"
+               uL readwrite local 3FFF0005
+               "This attribute specifies the maximum number of events that can be queued at any time on the given session."
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Rsrc Name"
+               "Resource Name"
+               string readonly global BFFF0002
+               "This attribute is the unique identifier for a resource."
+    attribute: "Rsrc Lock State"
+               "Resource Lock State"
+               uL readonly global 3FFF0004
+               "This attribute reflects the current locking state of the resource that is associated with the given session."
+    attribute: "Tmo Value"
+               "Timeout Value"
+               uL readwrite local 3FFF001A
+               "This attribute specifies the timeout value, in milliseconds, to use when accessing the device."
+    attribute: "Trigger Id"
+               "Trigger Identifier"
+               iW readwrite local 3FFF0177
+               "This attribute specifies which trigger mechanism to use.  In VXI systems, for example, you can choose between software triggers and hardware triggers on a specific trigger line."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+    attribute: "GPIB Primary Addr"
+               "GPIB Primary Address"
+               uW readonly global 3FFF0172
+               "This attribute value is the primary address of the GPIB device used by the given session."
+    attribute: "GPIB Secondary Addr"
+               "GPIB Secondary Address"
+               uW readonly global 3FFF0173
+               "This attribute value is the secondary address of the GPIB device used by the given session.  If the device does not have a secondary address, then the value of this attribute is 0xFFFF."
+    attribute: "Mainframe LA"
+               "Mainframe Logical Address"
+               iW readonly global 3FFF0070
+               "This attribute value is the lowest logical address in the mainframe in which the device resides."
+    attribute: "Manf Id"
+               "Manufacturer Identification"
+               uW readonly global 3FFF00D9
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the device."
+    attribute: "Mem Base"
+               "VXI Memory Base Address"
+               uL readonly global 3FFF00AD
+               "This attribute value is the base address of the device in VXI memory space."
+    attribute: "Mem Size"
+               "VXI Memory Size"
+               uL readonly global 3FFF00DD
+               "This attribute value is the size of memory requested by the device in VXI memory space."
+    attribute: "Mem Space"
+               "VXI Memory Address Space"
+               uW readonly global 3FFF00DE
+               "This attribute value is the VXI address space used by the device."
+    attribute: "Model Code"
+               "Model Code"
+               uW readonly global 3FFF00DF
+               "This attribute value is the device model code assigned by the manufacturer."
+    attribute: "Slot"
+               "Slot"
+               iW readonly global 3FFF00E8
+               "This attribute value is the physical slot location of the VXI device."
+    attribute: "VXI LA"
+               "VXI Logical Address"
+               iW readonly global 3FFF00D5
+               "This attribute value is the logical address of the VXI device."
+    attribute: "Immediate Serv"
+               "Immediate Servant"
+               bool readonly global 3FFF0100
+               "This attribute value reflects whether the VXI device is an immediate servant of the local controller."
+    attribute: "Win Base Addr"
+               "Window Base Address"
+               uL readonly local 3FFF0098
+               "This attribute value is the base interface address to which this window is mapped."
+    attribute: "Win Size"
+               "Window Size"
+               uL readonly local 3FFF009A
+               "This attribute value is the size of the region mapped to this window."
+    attribute: "Win Access"
+               "Window Access"
+               uW readonly local 3FFF00C3
+               "This attribute value reflects whether the current session has a mapped window, and if so, whether accesses through this window can be achieved through direct pointer dereferences."
+    attribute: "Cmdr LA"
+               "VXI Commander Logical Address"
+               iW readonly global 3FFF006B
+               "This attribute value is the logical address of the commander of the VXI device."
+    attribute: "Src Increment"
+               "Increment Source Count"
+               iL readwrite local 3FFF0040
+               "This attribute specifies the number of elements by which to increment the source address on block move operations."
+    attribute: "Dest Increment"
+               "Increment Destination Count"
+               iL readwrite local 3FFF0041
+               "This attribute specifies the number of elements by which to increment the destination address on block move operations."
+
+    method: "VISA Status Description"
+    method: "VISA Open"
+    method: "VISA Close"
+    method: "VISA Lock"
+    method: "VISA Unlock"
+    method: "VISA Enable Event"
+    method: "VISA Disable Event"
+    method: "VISA Wait on Event"
+    method: "VISA Discard Events"
+    method: "VISA Assert Trigger"
+    method: "VISA In 32"
+    method: "VISA In 16"
+    method: "VISA In 8"
+    method: "VISA Out 32"
+    method: "VISA Out 16"
+    method: "VISA Out 8"
+    method: "VISA Map Address"
+    method: "VISA Unmap Address"
+    method: "VISA Peek 32"
+    method: "VISA Peek 16"
+    method: "VISA Peek 8"
+    method: "VISA Poke 32"
+    method: "VISA Poke 16"
+    method: "VISA Poke 8"
+    method: "VISA Move In 8"
+    method: "VISA Move In 16"
+    method: "VISA Move In 32"
+    method: "VISA Move Out 8"
+    method: "VISA Move Out 16"
+    method: "VISA Move Out 32"
+    method: "VISA Mem Alloc"
+    method: "VISA Mem Free"
+
+class: "Serial Instr"
+    attribute: "Intf Num"
+	       "Interface Number"
+	       uW readonly global 3FFF0176
+               "This attribute value specifies the board number for the given interface."
+    attribute: "Intf Type"
+	       "Interface Type"
+	       uW readonly global 3FFF0171
+               "This attribute value specifies the interface type of the given session."
+    attribute: "IO Prot"
+	       "IO Protocol"
+               uW readwrite local 3FFF001C
+               "This attribute specifies which protocol to use.  In VXI systems, for example, you can choose between normal word serial or fast data channel.  In GPIB you can choose between normal and high-speed data transfers."
+    attribute: "Max Queue Len"
+               "Maximum Queue Length"
+               uL readwrite local 3FFF0005
+               "This attribute specifies the maximum number of events that can be queued at any time on the given session."
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Rsrc Name"
+               "Resource Name"
+               string readonly global BFFF0002
+               "This attribute is the unique identifier for a resource."
+    attribute: "Rsrc Lock State"
+               "Resource Lock State"
+               uL readonly global 3FFF0004
+               "This attribute reflects the current locking state of the resource that is associated with the given session."
+    attribute: "Send End En"
+               "Send End Enable"
+               bool readwrite local 3FFF0016
+               "This attribute specifies whether to send an END indicator on the last byte of each write operation."
+    attribute: "Suppress End En"
+               "Suppress End Enable"
+               bool readwrite local 3FFF0036
+               "This attribute specifies whether to ignore any END indicator on read operations."
+    attribute: "TermChar"
+               "Termination Character"
+               uB readwrite local 3FFF0018
+               "This attribute specifies a character that, when read, causes a read operation to terminate.  The termination character must also be enabled."
+    attribute: "TermChar En"
+               "Termination Character Enable"
+               bool readwrite local 3FFF0038
+               "This attribute specifies whether a read operation should terminate when the termination character is received."
+    attribute: "Tmo Value"
+               "Timeout Value"
+               uL readwrite local 3FFF001A
+               "This attribute specifies the timeout value, in milliseconds, to use when accessing the device."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+    attribute: "ASRL Avail Num"
+               "Number of Bytes at Serial Port"
+               uL readonly global 3FFF00AC
+               "This attribute specifies the number of bytes currently available at the serial port used by this session."
+    attribute: "ASRL Baud"
+               "Serial Baud Rate"
+               uL readwrite global 3FFF0021
+               "This attribute specifies the baud rate of the given communications port."
+    attribute: "ASRL Data Bits"
+               "Serial Data Bits"
+               uW readwrite global 3FFF0022
+               "This attribute specifies the number of data bits contained in each frame."
+    attribute: "ASRL Parity"
+               "Serial Parity"
+               uW readwrite global 3FFF0023
+               "This attribute specifies the parity used with every frame that is transmitted or received."
+    attribute: "ASRL Stop Bits"
+               "Serial Stop Bits"
+               uW readwrite global 3FFF0024
+               "This attribute specifies the number of stop bits used to indicate the end of a frame."
+    attribute: "ASRL Flow Cntrl"
+               "Serial Flow Control"
+               uW readwrite global 3FFF0025
+               "This attribute specifies the flow control method used for both transmitting and receiving data."
+    attribute: "ASRL End In"
+               "Serial End Mode for Reads"
+               uW readwrite local 3FFF00B3
+               "This attribute specifies the method used to terminate read operations."
+    attribute: "ASRL End Out"
+               "Serial End Mode for Writes"
+               uW readwrite local 3FFF00B4
+               "This attribute specifies the method used to terminate write operations."
+
+    method: "VISA Status Description"
+    method: "VISA Open"
+    method: "VISA Close"
+    method: "VISA Lock"
+    method: "VISA Unlock"
+    method: "VISA Enable Event"
+    method: "VISA Disable Event"
+    method: "VISA Wait on Event"
+    method: "VISA Discard Events"
+    method: "VISA Read"
+    method: "VISA Write"
+
+class: "Generic Event"
+    attribute: "Event Type"
+	       "Event Type"
+	       uL readonly local 3FFF4010
+    attribute: "Recv Trig ID"
+	       "Received Trigger ID"
+	       iW readonly local 3FFF4012
+    attribute: "Stat ID"
+	       "Status ID"
+	       uW readonly local 3FFF4011
+
+    method: "VISA Close"
+
+
+class: "Service Request Event"
+    attribute: "Event Type"
+	       "Event Type"
+	       uL readonly local 3FFF4010
+
+    method: "VISA Close"
+
+class: "Trigger Event"
+    attribute: "Event Type"
+	       "Event Type"
+	       uL readonly local 3FFF4010
+    attribute: "Recv Trig ID"
+	       "Received Trigger ID"
+	       iW readonly local 3FFF4012
+
+    method: "VISA Close"
+
+class: "VXI Signal Event"
+    attribute: "Event Type"
+	       "Event Type"
+	       uW readonly local 3FFF4010
+    attribute: "Stat ID"
+	       "Status ID"
+	       uW readonly local 3FFF4011
+
+    method: "VISA Close"
+
+class: "Resource Manager"
+    attribute: "Impl Version"
+               "Version of Implementation"
+               uL readonly  global 3FFF0003
+               "This attribute is the version that uniquely identifies each of the different revisions or implementations.  This attribute is defined by the individual manufacturer and increments with each new revision."
+    attribute: "Rsrc Manf Id"
+               "Resource Manufacturer Identification"
+               uW readonly global 3FFF0175
+               "This attribute value corresponds to the VXI manufacturer ID of the manufacturer that created the VTL or VISA implementation."
+    attribute: "Rsrc Manf Name"
+               "Resource Manufacturer Name"
+               string readonly global BFFF0174
+               "This attribute is the name of the manufacturer that created the implementation."
+    attribute: "Spec Version"
+               "Version of Specification"
+               uL readonly  global 3FFF0170
+               "This attribute is the version that uniquely identifies the version of the VTL or VISA specification to which the implementation is compliant."
+    attribute: "User Data"
+               "User Data"
+               uL readwrite local 3FFF0007
+               "This attribute is a data value for the private use of an application, and is unique per session.  This attribute is not used by VTL or VISA for any purpose."
+
+    method: "VISA Close"

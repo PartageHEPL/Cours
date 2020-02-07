@@ -1,0 +1,1 @@
+Like the previous example, avgv1, this example computes the average of floating point numbers.	However, in this example, the average is stored separately for each CIN node.  By using separate data spaces for each CIN node (with the GetDSStorage and SetDSStorage functions), each average can be maintained independently.

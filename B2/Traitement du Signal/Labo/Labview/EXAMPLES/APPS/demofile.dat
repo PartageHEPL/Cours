@@ -1,0 +1,463 @@
+This file contains the text information for the LabVIEW demo. Each entry in the file should have the following format:
+
+#name:::
+[Text]
+:::
+
+where,
+#         - the index of topic name, found as a look-up table in "Read Text Info (one file).vi
+name   - the topic name
+:::        - three colons to denote beginning of text information
+[Text]   - The text associated with the topic (brackets [ ] are not necessary; there MUST be a                                       	  carriage return or line feed before and after the text.  Multiple CR or LF are ignored.
+:::        - three colons to denote end of text information
+
+Multi-string entries should look like the following:
+
+#name:::
+string1
+@@
+string2
+@@
+stringN
+:::
+Note that @@ symbols should be on their own lines an serve to separate the strings.  @@ should not be used before the first string nor after the last string.
+
+Index:
+
+0 - yoyo - You're on your own screen.
+1 - ate - Top-level ATE info
+Here goes:
+
+yoyo - You're on your own screen.
+0yoyo:::
+
+All applications you have seen, including the main menu, have been written entirely in LabVIEW.
+
+LabVIEW is available on the following platforms:
+             PCs running Microsoft Windows, Windows 95, and Windows NT
+             68 K Macintosh and Power Macintosh computers
+             Sun SPARCstations
+             Hewlett Packard workstations
+
+Using the LabVIEW Demo, you can now build VIs on your own.  If you would like to follow along in your Demo Guide Booklet, start at page 2-1.
+
+For ordering information, call your local National Instruments office.  For telephone numbers, refer to the listing in your Demo Guide Booklet.
+
+
+Thanks for looking at the LabVIEW Demo! 
+
+:::
+
+
+ate - Top-level ATE info
+1ate:::
+
+       LabVIEW in Test and Measurement Applications
+
+The Virtual Instrument (VI) featured here is part of the LabVIEW Test Executive Toolkit.  Using this toolkit, you can control test execution sequences for production and manufacturing test applications.  The Test Executive Toolkit includes a ready-to-run Test Executive application developed in LabVIEW that you can use as delivered or customize to meet your specific requirements.
+
+In addition to your LabVIEW tests, you can also leverage off your existing code by calling Dynamic Link Libraries (DLLs) and Shared Libraries directly.  The Test Executive allows you to incorporate tests written in many languages, including LabVIEW, LabWindows/CVI, Visual C++, Borland C++, Visual Basic, and others. 
+
+Using LabVIEW, you can also connect to other applications through networking, interapplication communication, and SQL database links.  You can also identify problems and actually improve processes using the LabVIEW Statistical Process Control Toolkit.
+
+Because LabVIEW is a hierarchical programming environment, you can quickly develop test programs that can call several instruments, subprograms (subVIs), and applications.  A key to productivity is the extensive instrument driver libraries.
+
+Similarly, LabVIEW controls our full line of data acquisition (DAQ) hardware.  Because of the increasingly sophisticated instrumentation capabilities of plug-in boards and signal conditioning accessories, these DAQ systems are rapidly becoming cost-effective alternatives to traditional instrumentation.
+@@
+In the actual Test Executive Toolkit, these buttons control sequence file operations and login information.  For demonstration purposes, these buttons have been disabled.  However, the functions of each are described below.
+
+The Open button loads a test sequence into memory from a file.
+
+The Quit button stops execution of the Test Executive.
+
+The Login button prompts you to enter a user name and password.
+
+The Edit button invokes the Sequence Editor, with which you build and modify test sequences.
+
+The Save button saves a test sequence you have created or modified.
+
+The New button creates a new test sequence.
+@@
+In the actual Test Executive Toolkit, these buttons control the execution of the test sequence.  For demonstration purposes, these buttons have been disabled.  However, the functions of each are described below.
+
+The Test UUT button initiates repetitive execution of the test sequence for UUT testing.
+
+The Single Pass button initiates a single execution of the test sequence.
+
+The Abort button stops sequence execution after the currently executing test completes.
+
+The Run Test button executes the test currently selected in the Sequence Display.
+
+The Loop Test button initiates repetitive execution of the test currently selected in the Sequence Display.
+@@
+In the actual Test Executive Toolkit, these buttons control the display options for the test results.  For demonstration purposes, these buttons have been disabled.  However, the functions of each are described below.
+
+The Clear Test Status button clears the Test Status/Result field for each test in the Sequence Display.
+
+The Clear Test Display button erases the contents of the Test Display.
+
+The View Test Report button displays the current Test Report in the Test Display.
+:::
+
+
+instr - top-level Instrumentation info
+2instr:::
+
+          LabVIEW for Instrument Control Applications
+
+This virtual oscilloscope demonstrates the flexibility of LabVIEW for instrument control applications.  Using simple graphs, switches, and knobs, you can easily create cost-effective virtual instruments that you can be modify to fit your changing application needs. 
+
+National Instruments is a charter member of the VXIplug&play Systems Alliance, an organization founded to address system level software issues, such as application development environments and instrument drivers, which are beyond the scope of the VXIbus Consortium. Not only can LabVIEW call both WIN and GWIN framework drivers, LabVIEW is the only graphical programming language officially recognized by the VXIplug&play Alliance.
+
+LabVIEW features VI Libraries to control and acquire data from GPIB, VXI, and serial instruments. In addition, LabVIEW currently has more than 450 ready-to-use instrument driver VIs for controlling the most popular GPIB, VXI, and RS-232 instruments from more than 40 different manufacturers.
+
+These driver VIs, available at no charge, are ideal for controlling remote and modular instruments. They consist of intuitive, high-level functions that make it easy for you to control your instruments.
+:::
+
+basics - top-level basics info
+3basics:::
+
+    How to Easily Build Your Applications with LabVIEW
+
+Overview
+
+With LabVIEW, you build Virtual Instruments (VIs) instead of writing programs.  You can quickly create front panel user interfaces, giving you interactive control of your software system.  To specify the functionality, you intuitively assemble block diagrams - a natural design notation for engineers and scientists.  But with LabVIEW, the block diagram is the actual program, so you avoid the time-consuming task of converting ideas into cryptic source code.
+
+Front Panels - The User Interface
+
+On the front panel of your VI, you place the controls and data displays for your system by choosing objects from the Controls menu.  These objects include numeric displays, meters, gauges, thermometers, tanks, LEDs, charts, graphs, and more.  After placing the control objects on your panel, you can arrange and edit them to customize the user interface of your VI.
+
+When your VI is complete, you can use the front panel to control your system - while the VI is running - by clicking a switch, moving a slide, zooming in on a graph, or entering a value from the keyboard.  Meanwhile, the panel comes to life, providing real-time feedback from your system.  You can print this information on your panel or send the data to a file or another application. 
+
+Block Diagrams - The Source Code
+
+To program the VI, you construct the block diagram without worrying about the many syntactical details of conventional programming.  You select objects (icons) from the Functions menu and connect them with wires to pass data from one block to the next.  These blocks range from simple arithmetic functions to advanced acquisition and analysis routines. The blocks can also consist of network and file I/O operations that store and retrieve data in ASCII, binary, and spreadsheet formats.  You can also call programs written in other languages directly from the block diagram.  With LabVIEW, the block diagram is the source code.
+
+Modularity and Hierarchy - Flexibility for All Applications
+
+LabVIEW has a modular design - you can open and run many of the blocks as stand-alone VIs.  You can functionally break down your software system into subcomponents, or subVIs.  You can interactively test these subVIs and use them as icons to build sophisticated layers of VIs.  By creating an icon for your VI and using it in the block diagram of another VI, you can hide complexity in low-level diagrams while retaining access to intermediate values.
+
+Patented Programming Structures
+
+As a complete programming language, LabVIEW offers programming structures such as For loops, While loops, and Case statements for sequential, repetitive, and branching operations.  These structures appear as graphical borders that surround the icons they control.
+
+Dataflow Programming
+
+LabVIEW uses a dataflow programming model that frees you from the linear architecture of text-based languages.  Because the execution order in LabVIEW is determined by the flow of data between blocks and not by sequential lines of text, you can create diagrams that have simultaneous operations.  Consequently, LabVIEW is a multitasking system - running multiple execution threads, multiple VIs, and other applications.
+
+Graphical Compiler 
+
+In many applications, execution speed is critical.  LabVIEW is the only graphical programming system with a compiler that generates optimized code with execution speeds comparable to compiled C programs.  Consequently, you can increase your productivity with graphical programming without sacrificing execution speed.
+
+Powerful Debugging Tools
+
+Unlike many software packages that force you to compile to find errors, LabVIEW immediately indicates incorrect wire connections and lists problems in the Error window.  LabVIEW also features execution highlighting, a single-step mode, wire probes, and breakpoints, so you can trace and monitor the execution flow through the diagram.  LabVIEW programmers appreciate these easy-to-use tools as they develop and debug their applications.
+
+LabVIEW has extensive tools to develop, test, and debug your system.  LabVIEW features two types of help systems.  The built-in, context-sensitive Help window describes each icon and its connections.  LabVIEW also features traditional Online Help, providing instant access to common questions, online manuals, error codes, examples, customer support information, and more.
+
+Ready-to-Run Applications
+
+LabVIEW is shipped with more than 300 example VIs along with a special utility to help you locate exactly what you're looking for.   Some examples are designed to show you very basic LabVIEW concepts.   Many others, however, are functioning applications.  You can make modifications to existing examples to customize them for your application, thus eliminating the need to build a program from scratch.
+:::
+
+Am I still being used?  I don't think so!!!!
+other - top-level information for "Other Resources" button
+4other:::
+
+Hit OK to find out more information about other products and services available with National Instruments, including:
+
+          - Toolkits to get you started with LabVIEW applications
+          - Third-party products and services
+          - Training courses available for National Instruments products
+          - Technical support and user networks
+
+:::
+
+ni - top-level info for "About NI" button
+5ni:::
+
+Founded in 1976, National Instruments today is a leading manufacturer of IEEE 488 interfaces, plug-in DAQ boards, VXIbus controllers, and instrumentation software.  National Instruments is dedicated to providing the highest quality products for data acquisition, data analysis, and instrument control.  
+
+All of our products reflect National Instruments commitment to high quality and innovation at a competitive price.  We pledge to continue this commitment to you with investments in research and development that go well beyond industry norms.
+
+Our award-winning LabVIEW application software package is widely recognized for its innovative design, extensive functionality, and programming flexibility.  Thousands of LabVIEW users are developing successful applications in a variety of application areas.
+
+The National Instruments Corporate Headquarters is located in Austin, Texas.  The company has more than 30 offices in North America, 27 offices in 19 countries outside of North America, and numerous distributors worldwide.  For information on the office nearest you, contact our corporate headquarters at:
+                                      National Instruments
+                                      6504 Bridge Point Parkway
+                                      Austin, TX 78730-5039
+                                      Phone: (512) 794-0100
+                                      Fax:     (512) 794-8411
+:::
+
+pmc - top-level info for PM&C button
+6pmc:::
+
+Press on the pump, valve, and heater controls to the left to turn each component on and off.
+@@
+
+               Operating Instructions
+
+Key         Operation
+===============================
+   F1          Display this help screen.
+   F2          Put process in Automatic mode.
+   F3          Put process in Manual mode, 
+                 allowing you to operate the pumps 
+                 valves, and heater.
+   F4          Return to the main program.
+   F5          Display more information about 
+                 Factory Automation and Process
+                 Control Applications with LabVIEW.
+@@
+
+                 LabVIEW in Factory Automation and 
+                  Processing Monitoring Applications
+
+This simulation shows a simple demo of a Mixer Process Monitoring and Control system in LabVIEW.
+
+You can build LabVIEW applications that monitor and control your sensors and transducers through plug-in data acquisition (DAQ) products or serial communication.
+
+Alternatively, you can build supervisory control applications that monitor systems by communication through serial port, TCP/IP, or netDDE.   National Instruments Alliance Program members provide drivers for many brands of programmable logic controllers (PLCs), including Allen-Bradley, Siemens, Telemecanique and Modicon.
+
+National Instruments has other toolkits that provide application starters for PID control and statistical process control.
+:::
+
+daqls - Low-speed DAQ info
+7daqls:::
+
+          LabVIEW for Data Acquisition Monitoring Systems
+
+This Virtual Instrument (VI) simulates a temperature system that monitors and collects temperature values, compares them to user-specified limits, and performs simple analysis on the data.
+
+Using LabVIEW in combination with National Instruments plug-in data acquisition (DAQ) boards, you can create ideal systems for low-speed data acquisition and control.  In addition to the data acquisition and display capabilities, you can use VIs from the Statistics Library to monitor trends in your data acquisition.
+
+Using the TCP and UDP networking VIs in LabVIEW, you can easily create remote monitoring systems as well.
+
+Also, using the PID Control Toolkit, you can build sophisticated control algorithms.
+:::
+
+daqhs - high speed DAQ - Measure Displacement
+8daqhs:::
+Experiment with this system by changing the Acquisition Rate and the Set Velocity.  Notice that as the velocity increases, the acquisition rate must also be increased to prevent aliasing of the waveform and to accurately calculate the component frequencies of the displacement.
+@@
+Maximum
+Displacement
+Exceeded at 
+
+@@
+km/hr.
+@@
+LabVIEW for Real-Time Data Acquisition (DAQ) Systems
+
+This Virtual Instrument (VI) simulates a vibration analysis example.  As the velocity of the engine is increased, the displacement of the component also increases.  If the acquisition rate is not high enough, the component frequencies of the displacement waveform cannot be calculated accurately.  Thus, it is important to use high speed, high resolution DAQ boards for many applications.  National Instruments offers a complete line of high speed, plug-in DAQ boards for real-time data acquisition applications.
+
+LabVIEW is ideal for high-speed real-time data acquisition and analysis.  LabVIEW lets you acquire and output data with all National Instruments plug-in boards for IBM PC, AT EISA, Micro Channel, PCMCIA, Macintosh, and Sun computers.  LabVIEW contains both simple and sophisticated functions to give you maximum power and flexibility with your DAQ boards.
+
+To perform your in-line analysis as data is collected, LabVIEW features an impressive Analysis Library, rich in statistics, evaluations, regressions, linear algebra, signal generation algorithms, time and frequency-domain algorithms, windowing routines, and digital filters.  In addition to the analysis functions built into LabVIEW,  the Signal Processing Suite is available for joint time-frequency analysis, third-octave analysis, digital filter design, and spectral analysis.
+
+For more information on our data acquisition products or the Signal Processing Suite, please contact National Instruments.
+:::
+
+analysis - top-level Analysis button
+9analysis:::
+
+              LabVIEW for Data Analysis Applications
+
+This Virtual Instrument (VI) shows only a portion of the analysis capabilities in LabVIEW.  LabVIEW adds powerful, comprehensive analysis libraries that rival those of dedicated analysis packages.  By incorporating these analysis libraries into your VIs, you can create integrated acquisition and analysis systems.
+
+The Analysis VI Libraries deliver the latest technologies in analysis software.  These libraries are rich in statistics, evaluations, regressions, linear algebra, signal generation algorithms, time and frequency-domain algorithms, windowing routines, and digital filters.
+:::
+
+toolkits - Text for toolkits button in Other Resources.vi
+10toolkits:::
+National Instruments offers numerous LabVIEW Add-On Toolkits.  Using these toolkits, you can add functionality to your LabVIEW system for specialized industry needs.  These toolkits save you development time and money, as well as provide you with sophisticated tools to create your applications.
+:::
+
+alliance - text for Alliance button in Other Resouces.vi
+11alliance:::
+To broaden our hardware and software options, we created the Alliance Program.  This alliance strengthens our relationship with independent third parties that produce leading-edge technology for use with our products.  Our Alliance Program members represent the entire business spectrum, from small, part-time businesses to Fortune 500 companies, including system integrators, consultants, and hardware and software vendors from around the world. For more information on the Alliance Program, contact National Instruments.
+:::
+
+custed - Customer Education button in Other Resources.vi
+12custed:::
+
+National Instruments offers LabVIEW Customer Education materials and courses around the world.  You can attend these courses at a variety of locations.  The LabVIEW Basics course teaches you fundamental LabVIEW programming concepts.   The LabVIEW Advanced course teaches advanced user interface techniques, and time-saving and optimization techniques.  Courses are also available to help you develop LabVIEW Data Acquisition applications, LabVIEW GPIB applications, and LabVIEW VXI applications.  
+:::
+
+support - Technical Support button in Other Resources.vi
+13support:::
+National Instruments offers a wealth of support information, all available free-of-charge, to help you complete your applications.
+
+Online Services
+
+WWW Site - http://www.natinst.com
+FTP Site - ftp.natinst.com
+BBS - 512/794-5422
+FaxBack - 512/418-1111
+
+Direct Customer Support
+
+E-Mail - lv.support@natinst.com
+Telephone - contact your local 
+                  National Instruments 
+                  office
+
+User Group Meetings
+
+LabVIEW User Groups, held frequently around the world, are forums for you to exchange programs and opinions. Also, a user-sponsored Internet forum is available.
+
+info-labview@pica.army.mil
+
+Maintenance and Support Program 
+
+National Instruments offers a Maintenance and Support Program (MSP) to users of our application software products to ensure that they have the lastest versions of our software and have access to our complete range of priority technical support services.
+:::
+
+te - Test Executive - information about Toolkit in Other Resources.vi->Toolkits
+15te:::
+
+                The LabVIEW Test Executive Toolkit
+
+The Test Executive Toolkit is a multipurpose LabVIEW add-on package for automated test execution.  Using this toolkit, you can control test execution sequences for production and manufacturing test applications.  The Test Executive Toolkit includes a ready-to-run Test Executive application developed in LabVIEW that you can use as delivered or customize to meet your specific requirements.  Examples are included that show you how to incorporate statistical process control and database access into your test suite.
+:::
+
+
+spc - SPC - information about toolkit in Other Resources.vi->Toolkits
+16spc:::
+
+       The LabVIEW Statistical Process Control Toolkit
+
+The Statistical Process Control (SPC) Toolkit includes all the functions and controls you need to incorporate SPC analysis and presentations into your applications.  Using these functions, you can perform on-line SPC while collecting data, or you can analyze data that has been previously recorded. The toolkit addresses three areas of SPC - control charts, process statistics, and Pareto analysis.   For each of these areas, the toolkit contains analysis functions to compute important information from your data as well as plotting functions for displaying analysis results.
+:::
+
+sql - SQL - information about Toolkit in Other Resources.vi->Toolkits
+17sql:::
+
+           The LabVIEW SQL Toolkit - DatabaseVIEW
+
+The SQL Toolkit is a collection of LabVIEW VIs for direct interaction with a local or remote database.  High-level Access VIs simplify database access by intelligently encapsulating common database operations into easy-to-use VIs.  For direct access on columns, records, and tables, lower-level VIs are also included.  Capability for more than 25 popular databases is included.
+:::
+
+pid - PID - information about Toolkit in Other Resources.vi->Toolkits
+18pid:::
+
+                The LabVIEW PID Control Toolkit
+
+The PID Control Toolkit adds sophisticated control algorithms to LabVIEW.  With this package, you can quickly build data acquisition and control systems.  By combining the PID Control Toolkit with the math and logic functions in LabVIEW, you can quickly develop programs for automated control.  The toolkit VIs implement a wide range of  PID algorithms with error-squared and external-reset feedback, as well as lead-lag compensation and setpoint ramp generation.
+:::
+
+sps - Signal Processing Suite - information about Toolkit in Other Resources.vi->Toolkits
+19sps:::
+
+                    The Signal Processing Suite  
+
+The Signal Processing Suite is a software bundle that includes SpectrumWare, the Joint Time-Frequency Analysis Toolkit, the Digital Filter Design Toolkit, and the Third Octave Analyzer Toolkit. Each of these may also be purchased separately. 
+
+Joint Time-Frequency Analysis (JTFA) Toolkit - This toolkit offers precise signal analysis of data whose frequency content changes with time.  The package contains VIs that you can implement into your LabVIEW applications, as well as the Joint Time-Frequency Analyzer, a run-only application that analyzes your stored data files, displays the resulting spectrogram, and saves the spectrogram to disk.
+
+SpectrumWare(TM) - SpectrumWare combined with National Instruments data acquisition hardware is a ready-to-run dynamic signal analyzer virtual instrument. Use SpectrumWare as a DC to 20 KHz oscilloscope or dynamic signal analyzer to view signals in the time and frequency domains simultaneously. Measurements include total harmonic distortion, frequency response, power spectrum, amplitude spectrum, coherence, and cross spectrum.
+
+Digital Filter Design Toolkit - The Digital Filter Design Toolkit is a ready-to- run virtual instrument for interactively designing Finite Impulse Response (FIR) filters and Infinite Impulse Response (IIR) Filters.  Outputs include pole zero plots, magnitude and phase plots, impulse response, and step response.
+
+Third Octave Analyzer Toolkit - The Third Octave Analyzer Toolkit combined with National Instruments data acquisition hardware is a ready-to-run virtual instrument. The Third Octave Analyzer provides a standard instrument interface used widely in acoustics and vibration analysis. The toolkit includes LabVIEW source code so that you can moke modifications for custom applications.
+:::
+
+picture - Picture - information about Toolkit in Other Resources.vi->Toolkits
+20picture:::
+
+              The LabVIEW Picture Control Toolkit
+
+The LabVIEW Picture Control Toolkit is a versatile add-on graphics package for creating arbitrary front panel displays.  The toolkit adds the Picture control and a library of VIs to your LabVIEW System.  Using it, you can create new front panel displays, such as specialized bar charts, pie charts, or Smith charts.  You can even animate arbitrary objects such as robot arms, test equipment, a UUT, or a 2D display of a real-world process.
+:::
+
+appbuilder - Application Builder - information about App Builder in Other Resources.vi->Toolkits
+21appbuilder:::
+
+                 The LabVIEW Application Builder
+
+The LabVIEW Application Builder is an add-on package for creating stand-alone applications.  When accompanied by the Application Builder, a LabVIEW system can create VIs that operate as stand-alone applications.  You can run the executable but cannot edit it.
+
+By converting your VIs to applications, you are assured that no one will examine or modify them.  For the LabVIEW developer, applications ensure that the operator does not make inadvertent changes to a VI.  For the VI reseller, applications are an efficient way to package and distribute proprietary VIs.
+:::
+
+
+otherres - Opening string in Other Resources.vi
+22otherres:::
+When you purchase LabVIEW for your test and measurement, factory automation, and data acquisition applications, you are not alone.
+
+National Instruments offers several channels to help make you successful in your application development.
+
+Click on the buttons to explore the different resources available.
+:::
+
+top-level strings for the Demo Starter.vi
+The ten strings found below should cover the following subjects, respectively:
+ATE, instrument drivers, LabVIEW Basics, other resources, National Instruments, Process Monitoring and Control, Low-Speed DAQ, High-Speed DAQ, Analysis, and On your own.
+
+32toplevel:::
+Look at a LabVIEW Test and Measurement application.
+@@
+Explore instrument control using LabVIEW.
+@@
+See how easy graphical programming is with LabVIEW.
+@@
+Investigate resources to help build LabVIEW applications.
+@@
+Learn more about National Instruments.
+@@
+Look at a LabVIEW Factory Automation application.
+@@
+Examine a LabVIEW low-speed data acquisition application.
+@@
+Discover LabVIEW for real-time data acquisition applications.
+@@
+Investigate the LabVIEW Analysis Libraries.
+@@
+Explore LabVIEW for your own applications.
+:::
+
+The following contains the top-level information for the Other Resources VI.  The included describe:
+Toolkits, Alliance program, Customer Education, Technical Support.  The last string is a list of possible titles for the right-hand information box.
+
+33othertop:::
+Explore custom toolkits for your specialized application needs.
+@@
+Learn about the Alliance Program.
+@@
+Look at the variety of LabVIEW Customer Education courses available.
+@@
+See the wide range of technical support options and services available.
+@@
+Other Resources
+Toolkits
+Alliance Program
+Customer Education
+Technical Support
+:::
+
+helppmc - Instructions for operating the Control Mixer Process.vi
+34helppmc:::
+
+               Operating Instructions
+
+Key         Operation
+===============================
+   F1          Display this help screen.
+   F2          Put process in Automatic mode.
+   F3          Put process in Manual mode, 
+                 allowing you to operate the pumps 
+                 valves, and heater.
+   F4          Return to the main program.
+   F5          Display more information about 
+                 Factory Automation and Process
+                 Control Applications with LabVIEW.
+:::
+
+
+
+
+
+
+
+

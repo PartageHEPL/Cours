@@ -1,0 +1,4 @@
+name=aequalb
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>

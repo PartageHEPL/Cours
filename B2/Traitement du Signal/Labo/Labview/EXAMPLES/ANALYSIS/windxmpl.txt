@@ -1,0 +1,1 @@
+Contains an example (Window Comparison) that demonstrates the importance of using windows when performing spectral analysis on signals which contain multiple frequency components.

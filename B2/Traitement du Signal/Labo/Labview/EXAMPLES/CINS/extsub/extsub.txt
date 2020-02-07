@@ -1,0 +1,1 @@
+This example shows a CIN calling an external subroutine.  The CIN's code is in calcmean.c, and the external subroutine's code is in sum.c.  The external subroutine, 'sum', sums up any array of numbers; it could be called by other CINs as well.

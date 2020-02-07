@@ -1,0 +1,5 @@
+name=fileread
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

@@ -1,0 +1,9 @@
+Contains examples that demonstrate DSP functions such as the Fast Fourier Transform and the Fast Hilbert Transform.
+
+The example VIs in this VI library are:
+
+     2D FFT Example
+     DC Centered Spectrum
+     Echo Detector
+     Parseval's Theorem
+	

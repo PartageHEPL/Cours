@@ -1,0 +1,6 @@
+Contains examples that demonstrates polynomial root solving in LabVIEW.
+
+The example VIs in this VI library are:
+
+     Real Roots Example
+     Stability of Systems

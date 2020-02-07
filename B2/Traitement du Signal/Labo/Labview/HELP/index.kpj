@@ -1,0 +1,10 @@
+[Options]
+OutputFile=index
+Title=LabVIEW Help Index
+
+[Files]
+FILE1=c:\robohelp\lvproj\lvhelp.hlp,0
+FILE2=c:\robohelp\lvproj\cirm.hlp,0
+FILE3=c:\robohelp\lvproj\lvanls.hlp,0
+FILE4=c:\robohelp\lvproj\lvcomm.hlp,0
+

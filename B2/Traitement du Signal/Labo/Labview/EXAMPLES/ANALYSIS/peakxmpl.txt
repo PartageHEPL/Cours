@@ -1,0 +1,1 @@
+Contains an example (Peak Detection Example) that demonstrates peak detection in LabVIEW.

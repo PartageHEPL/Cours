@@ -1,0 +1,2 @@
+Examples of possible ways to use the TCP VIs in LabVIEW.  TCP is one
+of several networking protocols in the TCP/IP suite.

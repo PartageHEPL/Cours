@@ -1,0 +1,7 @@
+Contains examples that demonstrates how mathematical problems can be solved using LabVIEW.
+
+The example VIs in this VI library are:
+
+     Heat Equation Example
+     Shortest Paths Example
+     Simulation of Tomography

@@ -1,0 +1,5 @@
+name=filewrit
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

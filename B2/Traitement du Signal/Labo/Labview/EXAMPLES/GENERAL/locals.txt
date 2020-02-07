@@ -1,0 +1,1 @@
+Locals.llb contains VIs that show how to use local variables. Use local variables to access a front panel control or indicator in more than one place in the diagram, and to read from an indicator or write to a control.

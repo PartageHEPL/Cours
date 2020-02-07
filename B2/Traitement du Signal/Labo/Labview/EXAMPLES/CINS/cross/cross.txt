@@ -1,0 +1,3 @@
+This examples computes the cross product of two matrices (LabVIEW two-dimensional numeric arrays).
+
+ah x bh = resulth

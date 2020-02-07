@@ -1,0 +1,1 @@
+Ring.llb contains an example that shows how to use a ring as a pull-down menu. Rings are numeric controls that display a text and/or picture item for each different integer value (0, 1, 2, 3...).

@@ -1,0 +1,1 @@
+This examples illustrates the use of the DbgPrintf function, which displays a message for debugging purposes in a window which it creates (or destroys).  This function is fully documented in the CIN manual.

@@ -1,0 +1,1 @@
+Viopts.llb contains examples that demonstrate some of the options available from VI Setup. You select VI Setup options from the pop-up menu on the icon on a VI's front panel. These options include window style, window behavior, and execution priority.

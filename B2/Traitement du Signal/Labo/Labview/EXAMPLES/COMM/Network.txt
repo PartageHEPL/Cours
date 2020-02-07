@@ -1,0 +1,8 @@
+Contain examples of LabVIEW's networking capabilities using features available to each platform.
+
+Sun SPARCstation:	 TCP/IP
+Macintosh:			 Program to Program Communication
+					 TCP/IP
+PC:					 Microsoft Access
+					 Dynamic Data Exchange
+					 TCP/IP

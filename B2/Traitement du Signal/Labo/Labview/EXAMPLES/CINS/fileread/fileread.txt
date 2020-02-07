@@ -1,0 +1,1 @@
+This example reads the entire contents of an existing file.

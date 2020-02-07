@@ -1,0 +1,1 @@
+vicontrl.llb contains examples that demonstrate how to use the Call Instrument.vi to dynamically load and call subVIs.	Additional examples that show dynamic loading and calling of VIs are in the victltcp.llb in the network examples directory.

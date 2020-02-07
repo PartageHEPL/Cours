@@ -1,0 +1,1 @@
+This example multiplies two floating point numbers pointed to by ap and bp, and stores the result in the location pointed to by resultp.

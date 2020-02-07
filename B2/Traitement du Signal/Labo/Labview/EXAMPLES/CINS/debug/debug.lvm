@@ -1,0 +1,5 @@
+name=debug
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

@@ -1,0 +1,19 @@
+arrays.llb contains following VIs:
+
+Building Arrays.vi:
+	Shows two methods to build arrays by using auto-indexing
+
+Building Tables.vi:
+	Shows how to create a table where every column corresponds to a different variable.
+	A table	 is 2-dimensional array of strings.
+
+How to Replace Array Elements.vi:
+	This VI shows two ways to replace one element in 1D or 2D arrays and four ways
+	to replace rows or columns in 2D arrays.
+
+Separate Array Values.vi:
+	Separates an array into two smaller arrays based on the value of its elements.
+
+Temperature Analysis.vi:
+	This VI generates an array of temperature data and then calculates
+	the max, min, and average temperature.

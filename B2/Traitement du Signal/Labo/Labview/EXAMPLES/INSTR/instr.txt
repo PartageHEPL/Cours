@@ -1,0 +1,6 @@
+Contains gpib and serial I/O examples and VISA instrument driver templates.
+
+smplserl.llb - library that shows how to use LabVIEW's serial port VIs for serial communication.
+smplgpib.llb - library that shows how to use LabVIEW's gpib VIs for gpib communication.
+insttmpl.llb - library of VISA instrument driver template VIs.
+insticon.llb - collection of sample icons that are useful for instrument drivers.

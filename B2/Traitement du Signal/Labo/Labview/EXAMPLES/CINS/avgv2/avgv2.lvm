@@ -1,0 +1,6 @@
+name=avgv2
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+
+

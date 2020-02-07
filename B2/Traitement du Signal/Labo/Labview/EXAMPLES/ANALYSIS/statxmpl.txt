@@ -1,0 +1,10 @@
+Contains examples that demonstrate some of the statistical VIs.
+
+The example VIs in this VI library are:
+
+     Anova1D Example
+	 Confidence Interval Example
+     Noise Statistics Example
+     Probability Density Example
+     Running Histogram Example
+     Statistics Solver

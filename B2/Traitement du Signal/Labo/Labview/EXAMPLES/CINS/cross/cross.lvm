@@ -1,0 +1,5 @@
+name=cross
+type=CIN
+
+!include <$(CINTOOLSDIR)\ntlvsb.mak>
+

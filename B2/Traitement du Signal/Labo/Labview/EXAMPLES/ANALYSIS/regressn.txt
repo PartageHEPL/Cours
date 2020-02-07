@@ -1,0 +1,11 @@
+Contains examples that demonstrate the regression analysis VIs.
+
+The example VIs in this VI library are:
+
+     Financial Forecasting
+     General LS Fit Example
+     Linear Combinations
+     Nonlinear Lev-Mar Exponential Fit
+     Predicting Cost
+     Regression Solver
+     Regressions Demo

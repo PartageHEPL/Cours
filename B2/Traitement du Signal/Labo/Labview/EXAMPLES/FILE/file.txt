@@ -1,0 +1,3 @@
+Contains examples demonstrating LabVIEW's File functions and utilities.
+
+Examples creating and using file I/O that manipulates ASCII strings;  LabVIEW only datalog format; and creating text files in spreadsheet format.

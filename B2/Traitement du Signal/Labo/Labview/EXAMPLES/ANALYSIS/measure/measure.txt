@@ -1,0 +1,5 @@
+Contains examples employing the measurement LabVIEW VIs.
+
+Examples available describe:
+DAQ & Measurement     ->   daqmeas.llb
+Simulated Measurement ->   measxmpl.llb
