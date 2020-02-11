@@ -1,0 +1,18 @@
+Int main()
+{
+	pthread_t tid; 		Declarer un pid de thread
+	pthread_create(&tid,null,Fct,null);
+	pthreadjoin(tidDuThread,(void **)&valeurRetour); 	Attends la fin du thread et recupere la fonction de retour
+								valeurRetour = un pointeur de pointeur donc le cast en void**
+	printf("Valeur: %d,*valeurRetour);			*valeurRetour car pointeur de pointeur donc on prends le contenu du pointeur
+
+	free(ptr);
+}
+
+void* Fct(void* p)
+{
+	int* pCpt = malloc(sizeof(int));				On dois malloc car sinon on return une zone memoir plus bonne
+	(*pCpt)++;
+	...
+	pthread_exit(pCpt);
+}
