@@ -1,0 +1,139 @@
+EX1:
+Qu’est ce qu’un câble console ?
+	-Un cable console permet de coonnecter un pc portable a un routeur. Il donne acces au cli du routeur
+
+Qu’est ce qu’un câble AUX ?
+	-Un cable aux n'envoye les donnees qu'apres le boot du pc
+	(The AUX port only pushes output to the port after power-up (no boot strap/power on self test (POST)) output.
+
+Que fait telnet ?
+	-Telent est un moyen de se connecter a une machine a distance(comme SSH mais en moins securise)
+	-La connexion Telnet utilise le protocole TCP pour transporter les informations de contrôle
+	nécessaires à l’émulation de la syntaxe du terminal. Dans la plupart des cas, Telnet est utilisé pour
+	établir une connexion entre deux machines considérées comme des terminaux virtuels. Il fonctionne
+	sur le port 23. Le seul problème ce que Telnet n'est pas sécurisé, il transmet en clair, lors de
+	l'authentification, le mot de passe. D'où la nécessité du protocole SSH. 
+
+
+EX2: 
+Qu’est ce que ssh ?
+	-SSH est un protocole de communication sécurisé qui remplace Telnet pour la connexion à distance à
+	une machine. SSH exige donc au début de la connexion l'echange de clés de chiffrement permettant
+	par la suite le chiffrement de tous les segments TCP. Il fonctionne sur le port 22.
+
+Comment activer ssh à la place de telnet ?
+	-transport input ssh
+
+Par quelle séquence se connecte-t-on en ssh ?
+	-ssh -l leNomDuLogin addressIp
+
+Pourquoi donner une ip à un switch ?
+	-pour pouvoir  s'y connecter et le configurer et car il a besoin d'une ip pour utiliser le reseau
+
+EX3:
+CDP est un protocole de quel niveau ?
+	-2
+Quelle est l’utilité de cdp ?
+	-Il permet de decouvrir d'autres périphériques directement connectés
+
+EX4:
+Comment configure-t-on les deux routeurs du schéma ci-dessus , indiquez les commandes sur chaque routeur ?
+	Pour activer rip:
+		-conf t
+		-router rip
+		-version 2
+		-network .... tout les reseaux connectes au routeur
+		-wr
+	Pour descativer le split-horizon
+		-conf t
+		-interface ...
+		-no ip split-horizon
+		-wr
+	Pour vour ce qu'il se passe:
+		-debug ip rip
+
+Quelles sont les routes et leur métrique envoyée via l’interface 192.168.1.1 ?
+	-La route 192.168.1.0
+	-La route 192.168.2.0 
+	-Car les 2 routes représentes les 2 reseau connecte au routeur
+
+EX5:
+Quel est l’effet de la commande Auto Summarization ?
+	-Il ne motre pas l'ensemble des différents réseau mais les affiche en une seul ligne
+EX6:
+Dans un serveur dns , quelle est l’utilité d’un record A ?
+	-Un A permet de faire le lien entre une lien d'un site et son ip (la base du dns)
+Dans un serveur dns, quelle est l’utilité d’un record CNAME ?
+	-Un CNAME permet d'ecrire de plusieurs maniere le meme site(c'est un alias) https://fr.wikipedia.org/wiki/Enregistrement_de_nom_canonique
+Quelle est la commande permettant d’interroger un serveur DNS ?
+	-ftp leNomDuSite
+Dans notre configuration quel est le nom du serveur de mail entrant ?
+	-pop3
+Dans notre configuration quel est le nom du serveur de mail sortant ?
+	-smtp
+
+Ex7:
+Quel est le principe du sticky Mac Adresse ?
+	-le switch retiens la mac meme quand il redemare. Pas besoin de demander a tout les
+	périphériques connectés leurs macs
+Au niveau du switch à quoi voit-on que sticky mac adresse à fonctionné 
+	-si on fait un ipconfig /renew sur un nouveau pc connecte a la meme interface ca ne marche pas
+
+Ex8:
+Quels sont les ports qui seront designated et pourquoi ?
+	-Je sais pas
+
+Ex9:
+Quel est le principe du dhcp , <> avec adresse statique ?
+	-le but que chaque pc puisse avoir une adress ip d'une fafonc dynamique(qui peu changer)
+	-le statique jsp
+Quelles sont les messages échangés lors d'une demande d'une adresse ip ?
+	-a completer
+Configurer le dhcp pour un routeur cisco à partir d'un exemple.
+	-Savoir faire
+
+Ex10:
+Quel est le principe de la délégation ?
+	-le but est de faire des sous-classes pour chaque pays et puis des sous-classes pour les villes
+Quels sont les records à ajouter à ns.europe pour que europe délègue à
+Espagne.Europe dont l'ip est 192.168.1.3 ?
+
+
+
+
+Pour mettre une ip a un routeur: 
+-conf t
+-interface vlan1
+-ip address ip mask
+-no shut
+-ip default-gateway ip
+-exit
+-wr
+
+Pour desactiver cdp:
+-conf t
+-no cdp run
+
+Pour activer cdp:
+-conf t
+-cdp run
+
+Pour desactiver cdp a l'interface FastEthernet:
+-conf t
+-interface FastEthernet...
+-no cdp run
+
+Pour activer rip:
+-conf t
+-router rip
+-version 2
+-network .... tout les reseaux connectes au routeur
+-wr
+
+Pour descativer le split-horizon
+-conf t
+-interface ...
+-no ip split-horizon
+-wr
+
+
